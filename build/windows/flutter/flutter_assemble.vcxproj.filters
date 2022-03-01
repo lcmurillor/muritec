@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CustomBuild Include="D:\Desarrollo\MuriTEC\app web flutter\app_muritec\build\windows\CMakeFiles\68fd59956ffe39b4755532518289fed1\flutter_windows.dll.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="D:\Desarrollo\MuriTEC\app web flutter\app_muritec\build\windows\CMakeFiles\249b8ed8939eb4a5f4d6030affb73143\flutter_assemble.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="D:\Desarrollo\MuriTEC\app web flutter\app_muritec\windows\flutter\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="D:\Desarrollo\MuriTEC\app web flutter\app_muritec\build\windows\flutter\CMakeFiles\flutter_assemble" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{73A8A1EE-A92F-3788-B07E-2E7F35D76A19}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>
