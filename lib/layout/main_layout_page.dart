@@ -1,4 +1,4 @@
-import 'package:app_muritec/views/views.dart';
+import 'package:app_muritec/shared/sheards.dart';
 import 'package:flutter/material.dart';
 
 class MainLayoutPage extends StatelessWidget {
@@ -9,7 +9,7 @@ class MainLayoutPage extends StatelessWidget {
     return Scaffold(
       body: Center(
           child: Column(
-        children: const [CustomAppMenu()],
+        children: const [CustomAppMenu(), Spacer(), CustomAppFooter()],
       )),
     );
   }
