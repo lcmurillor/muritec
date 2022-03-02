@@ -4,6 +4,7 @@ import 'package:app_muritec/providers/menu_provider.dart';
 import 'package:app_muritec/shared/sheards.dart';
 import 'package:app_muritec/theme/theme.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:provider/provider.dart';
 
 class CustomAppMenu extends StatelessWidget {
@@ -30,18 +31,18 @@ class _FullSizedMenu extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: double.infinity,
-      height: 160,
-      color: Colors.white,
+      height: 140,
       padding: const EdgeInsets.symmetric(horizontal: 100),
+      decoration: _customBoxDecoration(),
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.end,
         children: [
           //Logo de la empresa
           Container(
               padding: const EdgeInsets.only(bottom: 20),
-              child: Image.asset(
-                'Isologotipo.png',
-                semanticLabel: 'MuriTEC logo',
+              child: SvgPicture.asset(
+                'assets/Isologotipo.svg',
+                semanticsLabel: 'MuriTEC logo',
                 fit: BoxFit.cover,
                 height: 100,
               )),
@@ -98,8 +99,8 @@ class _MediumSizedMenuState extends State<_MediumSizedMenu> {
     return Container(
       width: double.infinity,
       height: size.getmenuSize(),
-      color: Colors.white,
       padding: const EdgeInsets.only(left: 40, right: 40, top: 16),
+      decoration: _customBoxDecoration(),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -143,9 +144,9 @@ class _MenuTitle extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         //Logo de la empresa
-        Image.asset(
-          'Isologotipo-reducido.png',
-          semanticLabel: 'MuriTEC logo',
+        SvgPicture.asset(
+          'assets/Isologotipo.svg',
+          semanticsLabel: 'MuriTEC logo',
           fit: BoxFit.cover,
           height: 50,
         ),
@@ -163,4 +164,11 @@ class _MenuTitle extends StatelessWidget {
       ],
     );
   }
+}
+
+BoxDecoration _customBoxDecoration() {
+  return BoxDecoration(color: Colors.white, boxShadow: [
+    BoxShadow(
+        color: MainTheme.shadowBlue, offset: const Offset(0, 8), blurRadius: 34)
+  ]);
 }
