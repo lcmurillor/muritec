@@ -1,16 +1,19 @@
 // ignore_for_file: file_names
 
+import 'package:app_muritec/providers/menu_provider.dart';
 import 'package:app_muritec/shared/sheards.dart';
+import 'package:app_muritec/theme/theme.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
+import 'package:provider/provider.dart';
 
 class CustomAppMenu extends StatelessWidget {
   const CustomAppMenu({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return LayoutBuilder(
-      builder: (_, BoxConstraints constraints) {
-        return (constraints.maxWidth > 945)
+      builder: (_, constraints) {
+        return (constraints.maxWidth > 910)
             ? const _FullSizedMenu()
             : const _MediumSizedMenu();
       },
@@ -35,23 +38,37 @@ class _FullSizedMenu extends StatelessWidget {
         children: [
           //Logo de la empresa
           Container(
-            padding: const EdgeInsets.only(bottom: 20),
-            child: SvgPicture.asset(
-              'Isologotipo.svg',
-              semanticsLabel: 'MuriTEC Logo',
-              fit: BoxFit.cover,
-              height: 100,
-            ),
-          ),
+              padding: const EdgeInsets.only(bottom: 20),
+              child: Image.asset(
+                'Isologotipo.png',
+                semanticLabel: 'MuriTEC logo',
+                fit: BoxFit.cover,
+                height: 100,
+              )),
           const Spacer(),
           //Botones dle menu
           Container(
             padding: const EdgeInsets.only(bottom: 40),
             child: Row(
               children: [
-                CustomMenuButton(text: 'Acerca de nosotros', onPressed: () {}),
-                CustomMenuButton(text: 'Experiencia', onPressed: () {}),
-                CustomMenuButton(text: 'contáctanos', onPressed: () {}),
+                CustomMenuButton(
+                  text: 'Acerca de nosotros',
+                  onPressed: () {},
+                  paddingLeft: 40,
+                  delay: 40,
+                ),
+                CustomMenuButton(
+                  text: 'Experiencia',
+                  onPressed: () {},
+                  paddingLeft: 40,
+                  delay: 80,
+                ),
+                CustomMenuButton(
+                  text: 'Contáctanos',
+                  onPressed: () {},
+                  paddingLeft: 40,
+                  delay: 120,
+                ),
               ],
             ),
           ),
@@ -61,11 +78,89 @@ class _FullSizedMenu extends StatelessWidget {
   }
 }
 
-class _MediumSizedMenu extends StatelessWidget {
+class _MediumSizedMenu extends StatefulWidget {
   const _MediumSizedMenu({Key? key}) : super(key: key);
 
   @override
+  State<_MediumSizedMenu> createState() => _MediumSizedMenuState();
+}
+
+class _MediumSizedMenuState extends State<_MediumSizedMenu> {
+  late AnimationController controller;
+  @override
+  void initState() {
+    super.initState();
+  }
+
+  @override
   Widget build(BuildContext context) {
-    return Container();
+    MenuProvider size = Provider.of<MenuProvider>(context);
+    return Container(
+      width: double.infinity,
+      height: size.getmenuSize(),
+      color: Colors.white,
+      padding: const EdgeInsets.only(left: 40, right: 40, top: 16),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          const _MenuTitle(),
+          const SizedBox(height: 5),
+          if (size.getmenuSize() > 80) ...[
+            CustomMenuButton(
+              text: 'Acerca de nosotros',
+              onPressed: () {},
+              paddingLeft: 0,
+              paddinfVerticlal: 15,
+              delay: 40,
+            ),
+            CustomMenuButton(
+              text: 'Experiencia',
+              onPressed: () {},
+              paddingLeft: 0,
+              paddinfVerticlal: 15,
+              delay: 80,
+            ),
+            CustomMenuButton(
+              text: 'contáctanos',
+              onPressed: () {},
+              paddingLeft: 0,
+              paddinfVerticlal: 15,
+              delay: 120,
+            ),
+          ],
+        ],
+      ),
+    );
+  }
+}
+
+class _MenuTitle extends StatelessWidget {
+  const _MenuTitle({Key? key}) : super(key: key);
+  @override
+  Widget build(BuildContext context) {
+    MenuProvider size = Provider.of<MenuProvider>(context);
+    return Row(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        //Logo de la empresa
+        Image.asset(
+          'Isologotipo-reducido.png',
+          semanticLabel: 'MuriTEC logo',
+          fit: BoxFit.cover,
+          height: 50,
+        ),
+        const Spacer(),
+        //Botones dle menu
+        IconButton(
+            onPressed: () => (size.getmenuSize() == 80)
+                ? {size.setMenuSize(200)}
+                : {size.setMenuSize(80)},
+            icon: Icon(
+              Icons.menu,
+              size: 40,
+              color: MainTheme.mainGray,
+            )),
+      ],
+    );
   }
 }
