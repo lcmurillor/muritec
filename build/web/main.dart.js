@@ -7861,15 +7861,14 @@ a0J:function a0J(){},
 a0K:function a0K(){},
 Hn:function Hn(a){this.a=a},
 a0L:function a0L(a){this.a=a},
-r5(a,b,c,d,e,f){return new A.r4(f,e,c,d,a,b,null)},
-r4:function r4(a,b,c,d,e,f,g){var _=this
+r5(a,b,c,d,e){return new A.r4(e,d,b,c,a,null)},
+r4:function r4(a,b,c,d,e,f){var _=this
 _.c=a
 _.d=b
 _.e=c
 _.f=d
 _.r=e
-_.x=f
-_.a=g},
+_.a=f},
 G3:function G3(a){var _=this
 _.d=!1
 _.a=null
@@ -34064,7 +34063,7 @@ $2(a,b){return b.b>910?B.N3:B.N7},
 $S:114}
 A.GL.prototype={
 K(a,b){var s=null,r=A.acb(),q=t.D
-return A.f7(s,A.lG(A.a([A.f7(s,A.XZ("assets/Isologotipo.svg",B.cD,100,"MuriTEC logo"),s,s,s,s,B.Am,s),B.dH,A.f7(s,A.lG(A.a([A.r5(40,s,40,s,new A.a_M(),"Acerca de nosotros"),A.r5(80,s,40,s,new A.a_N(),"Experiencia"),A.r5(120,s,40,s,new A.a_O(),"Cont\xe1ctanos")],q),B.aG,B.aw,B.ax),s,s,s,s,B.An,s)],q),B.kR,B.aw,B.ax),s,r,140,s,B.l5,1/0)}}
+return A.f7(s,A.lG(A.a([A.f7(s,A.XZ("assets/Isologotipo.svg",B.cD,100,"MuriTEC logo"),s,s,s,s,B.Am,s),B.dH,A.f7(s,A.lG(A.a([A.r5(40,40,s,new A.a_M(),"Acerca de nosotros"),A.r5(80,40,s,new A.a_N(),"Experiencia"),A.r5(120,40,s,new A.a_O(),"Cont\xe1ctanos")],q),B.aG,B.aw,B.ax),s,s,s,s,B.An,s)],q),B.kR,B.aw,B.ax),s,r,140,s,B.l5,1/0)}}
 A.a_M.prototype={
 $0(){},
 $S:1}
@@ -34079,7 +34078,7 @@ aL(){return new A.Hm(B.m)}}
 A.Hm.prototype={
 bl(){this.bN()},
 K(a,b){var s=A.aau(b,t.QU),r=s.a,q=A.acb(),p=t.D,o=A.a([B.N8],p)
-if(s.a>80)B.c.D(o,A.a([B.Hg,A.r5(40,10,0,2,new A.a0I(),"Acerca de nosotros"),A.r5(80,10,0,2,new A.a0J(),"Experiencia"),A.r5(120,10,0,2,new A.a0K(),"Cont\xe1ctanos")],p))
+if(s.a>80)B.c.D(o,A.a([B.Hg,A.r5(40,0,2,new A.a0I(),"Acerca de nosotros"),A.r5(80,0,2,new A.a0J(),"Experiencia"),A.r5(120,0,2,new A.a0K(),"Cont\xe1ctanos")],p))
 return A.f7(null,A.a5_(o,B.cN,B.aw),null,q,r,null,B.Aq,1/0)}}
 A.a0I.prototype={
 $0(){},
@@ -34095,7 +34094,7 @@ K(a,b){var s=A.aau(b,t.QU)
 return A.lG(A.a([A.XZ("assets/Isologotipo.svg",B.cD,50,"MuriTEC logo"),B.dH,A.a9z(A.a9y(B.AS,B.cM,40),new A.a0L(s))],t.D),B.cN,B.aw,B.ax)}}
 A.a0L.prototype={
 $0(){var s=this.a,r=t.z
-if(s.a===80){s.a=200
+if(s.a===80){s.a=250
 s.bs()
 s=A.cm([null],r)}else{s.a=80
 s.bs()
@@ -34105,23 +34104,21 @@ A.r4.prototype={
 aL(){return new A.G3(B.m)},
 VX(){return this.d.$0()}}
 A.G3.prototype={
-K(a,b){var s,r,q,p,o,n=this,m=null,l=n.a,k=A.ct(0,l.r),j=l.e,i=l.f,h=i==null,g=h?0:i
-if(h)i=0
-h=A.a4S(m,m,m,m,m,m,m,m,m,m,new A.cW(B.aS,t.GJ),new A.cW(B.aJ,t.M5),m,m,m,m,m,m,m)
-s=l.c
-l=l.x
-if(l==null)l=18
-r=n.d?B.k:B.cM
-q=A.aW([B.AA,new A.cu("609ae3f057d392507fed90188cf6f9d5f85bb59f613c0decb2ecc9f51312a5cd",148976),B.AB,new A.cu("4a2e8bca7b027b0f8cc0218b80ec9823ca3b98d4a06f17651337b01fb85f8ede",172308),B.AC,new A.cu("2a489fff366883b0e5df107f6f4d5af2554723b61495c5509d4c3f62e038bc47",147952),B.AD,new A.cu("e331f856e52ddab916a83bea449fda91561fab22bef776c8a817bcd9871ce0c9",170912),B.AE,new A.cu("7f15d9a49bc6ca8b49ac995bbc36065b4bab0ed9f6d394a4c49d8f9ac85672c2",146472),B.AF,new A.cu("2d4fb2fa8e59703eaf3fd748fdba32ff276e881015912154d7ffd5c24ba0afd6",168944),B.AG,new A.cu("2425ebbc021bfdd18fe55edbeeb1539d22a217212c14430a7d4d75266a333bbc",145312),B.AH,new A.cu("f058c785d855d5a6020eee6962eba4a653a871e6f07cabe930504e857b76ccb7",167140),B.AI,new A.cu("45870260a29fa7d3e0eff8cdd91993fb4a9ce4cced3d7b72c3ef7d24380bfc2d",143516),B.AJ,new A.cu("231c5c16820cd2507d24716e41bce0bafafe7175410e6197b5621c9cedaf84ff",165512),B.AK,new A.cu("1d665d5b75a9500040b2cc201c2b07af5faca7228372dc6f4572d2d5b2291097",142148),B.AL,new A.cu("cb112397951c33d64e908cec5cf9f34d1ecc2c13f047f98061f834fc4a96e490",161896),B.AM,new A.cu("210933fb1bb4e846d37ef00c92cae636ac35633132cf2157c7ac879f27f82068",141260),B.AN,new A.cu("478ff165d4f208b41963f9774fda29358a902ad29026d486a94a50bb2e9b7a05",160224),B.AO,new A.cu("9599edf36a7c40e752cd1fbc308f5351c59aae0b3bd6fa5bfbdaa61c16f8cee1",140220),B.AP,new A.cu("230e076f3eaab8aa5b295152336dd453ac731569b1f72b4aa836f0edd6cdfe74",158708),B.AQ,new A.cu("2535406edd2aa55242329705ca9418a07d3a51ae28cadca3ee5becae61aa8987",139056),B.AR,new A.cu("82eaa315798c980852cb782b3dc81adeb39c16903a1a46d96e5917f79266929d",155956)],t.gm,t.Ks)
-p=B.tG.SS(m,m,r,m,m,m,m,m,l,m,m,m,m,m,m,m,m,m)
-l=p.x
-if(l==null)l=B.n
-o=A.ao4(new A.ck(l,B.X),q.ga_(q))
-l=q.i(0,o)
-l.toString
-A.q7(new A.Qh(new A.Qi("Poppins",o),l))
-i=A.a5B(A.f7(m,new A.EC(new A.a_g(n),m,m,m,h,B.J,m,!1,new A.EB(s,m,p.SU("Poppins_"+o.h(0),A.a(["Poppins"],t.s)),m),m),m,m,m,new A.bd(j,g,0,i),m,m),B.e3,new A.a_h(n),new A.a_i(n))
-return new A.ru(i,B.ar,k,40,m)}}
+K(a,b){var s,r,q,p,o=this,n=null,m=o.a,l=A.ct(0,m.r),k=m.e,j=m.f,i=j==null,h=i?0:j
+if(i)j=0
+i=A.a4S(n,n,n,n,n,n,n,n,n,n,new A.cW(B.aS,t.GJ),new A.cW(B.aJ,t.M5),n,n,n,n,n,n,n)
+m=m.c
+s=o.d?B.k:B.cM
+r=A.aW([B.AA,new A.cu("609ae3f057d392507fed90188cf6f9d5f85bb59f613c0decb2ecc9f51312a5cd",148976),B.AB,new A.cu("4a2e8bca7b027b0f8cc0218b80ec9823ca3b98d4a06f17651337b01fb85f8ede",172308),B.AC,new A.cu("2a489fff366883b0e5df107f6f4d5af2554723b61495c5509d4c3f62e038bc47",147952),B.AD,new A.cu("e331f856e52ddab916a83bea449fda91561fab22bef776c8a817bcd9871ce0c9",170912),B.AE,new A.cu("7f15d9a49bc6ca8b49ac995bbc36065b4bab0ed9f6d394a4c49d8f9ac85672c2",146472),B.AF,new A.cu("2d4fb2fa8e59703eaf3fd748fdba32ff276e881015912154d7ffd5c24ba0afd6",168944),B.AG,new A.cu("2425ebbc021bfdd18fe55edbeeb1539d22a217212c14430a7d4d75266a333bbc",145312),B.AH,new A.cu("f058c785d855d5a6020eee6962eba4a653a871e6f07cabe930504e857b76ccb7",167140),B.AI,new A.cu("45870260a29fa7d3e0eff8cdd91993fb4a9ce4cced3d7b72c3ef7d24380bfc2d",143516),B.AJ,new A.cu("231c5c16820cd2507d24716e41bce0bafafe7175410e6197b5621c9cedaf84ff",165512),B.AK,new A.cu("1d665d5b75a9500040b2cc201c2b07af5faca7228372dc6f4572d2d5b2291097",142148),B.AL,new A.cu("cb112397951c33d64e908cec5cf9f34d1ecc2c13f047f98061f834fc4a96e490",161896),B.AM,new A.cu("210933fb1bb4e846d37ef00c92cae636ac35633132cf2157c7ac879f27f82068",141260),B.AN,new A.cu("478ff165d4f208b41963f9774fda29358a902ad29026d486a94a50bb2e9b7a05",160224),B.AO,new A.cu("9599edf36a7c40e752cd1fbc308f5351c59aae0b3bd6fa5bfbdaa61c16f8cee1",140220),B.AP,new A.cu("230e076f3eaab8aa5b295152336dd453ac731569b1f72b4aa836f0edd6cdfe74",158708),B.AQ,new A.cu("2535406edd2aa55242329705ca9418a07d3a51ae28cadca3ee5becae61aa8987",139056),B.AR,new A.cu("82eaa315798c980852cb782b3dc81adeb39c16903a1a46d96e5917f79266929d",155956)],t.gm,t.Ks)
+q=B.tG.SS(n,n,s,n,n,n,n,n,18,n,n,n,n,n,n,n,n,n)
+s=q.x
+if(s==null)s=B.n
+p=A.ao4(new A.ck(s,B.X),r.ga_(r))
+s=r.i(0,p)
+s.toString
+A.q7(new A.Qh(new A.Qi("Poppins",p),s))
+j=A.a5B(A.f7(n,new A.EC(new A.a_g(o),n,n,n,i,B.J,n,!1,new A.EB(m,n,q.SU("Poppins_"+p.h(0),A.a(["Poppins"],t.s)),n),n),n,n,n,new A.bd(k,h,0,j),n,n),B.e3,new A.a_h(o),new A.a_i(o))
+return new A.ru(j,B.ar,l,40,n)}}
 A.a_h.prototype={
 $1(a){var s=this.a
 return s.aV(new A.a_f(s))},
@@ -56422,7 +56419,7 @@ B.Hd=new A.T(1e5,1e5)
 B.He=new A.T(64,36)
 B.Hf=new A.T(1/0,1/0)
 B.jj=new A.jR(0,0,null,null)
-B.Hg=new A.jR(null,10,null,null)
+B.Hg=new A.jR(null,15,null,null)
 B.th=new A.v0(null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null)
 B.O5=new A.oT(3,"hide")
 B.ti=new A.oT(5,"timeout")

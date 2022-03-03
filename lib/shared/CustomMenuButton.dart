@@ -54,7 +54,6 @@ class _CustomMenuButtonState extends State<CustomMenuButton> {
                 widget.text,
                 style: GoogleFonts.poppins(
                     fontSize: widget.fontSize ?? 18,
-                    //fontWeight: isHover ? FontWeight.bold : FontWeight.normal,
                     color: isHover ? Colors.black : MainTheme.mainGray),
               )),
         ),

@@ -106,14 +106,13 @@ class _MediumSizedMenuState extends State<_MediumSizedMenu> {
         children: [
           const _MenuTitle(),
           if (size.getmenuSize() > 80) ...[
-            const SizedBox(height: 10),
+            const SizedBox(height: 15),
             CustomMenuButton(
               text: 'Acerca de nosotros',
               onPressed: () {},
               marginLeft: 0,
               marginVertical: 2,
               delay: 40,
-              fontSize: 10,
             ),
             CustomMenuButton(
               text: 'Experiencia',
@@ -121,7 +120,6 @@ class _MediumSizedMenuState extends State<_MediumSizedMenu> {
               marginLeft: 0,
               marginVertical: 2,
               delay: 80,
-              fontSize: 10,
             ),
             CustomMenuButton(
               text: 'Contáctanos',
@@ -129,7 +127,6 @@ class _MediumSizedMenuState extends State<_MediumSizedMenu> {
               marginLeft: 0,
               marginVertical: 2,
               delay: 120,
-              fontSize: 10,
             ),
           ],
         ],
@@ -157,7 +154,7 @@ class _MenuTitle extends StatelessWidget {
         //Botones dle menu
         IconButton(
             onPressed: () => (size.getmenuSize() == 80)
-                ? {size.setMenuSize(200)}
+                ? {size.setMenuSize(250)}
                 : {size.setMenuSize(80)},
             icon: Icon(
               Icons.menu,
