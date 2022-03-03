@@ -1,7 +1,0 @@
-D:/Desarrollo/MuriTEC/app web flutter/app_muritec/build/windows/runner/Debug/data/icudtl.dat
-D:/Desarrollo/MuriTEC/app web flutter/app_muritec/build/windows/runner/Debug/flutter_windows.dll
-D:/Desarrollo/MuriTEC/app web flutter/app_muritec/build/windows/runner/Debug/data/flutter_assets/AssetManifest.json
-D:/Desarrollo/MuriTEC/app web flutter/app_muritec/build/windows/runner/Debug/data/flutter_assets/FontManifest.json
-D:/Desarrollo/MuriTEC/app web flutter/app_muritec/build/windows/runner/Debug/data/flutter_assets/fonts/MaterialIcons-Regular.otf
-D:/Desarrollo/MuriTEC/app web flutter/app_muritec/build/windows/runner/Debug/data/flutter_assets/NOTICES
-D:/Desarrollo/MuriTEC/app web flutter/app_muritec/build/windows/runner/Debug/data/flutter_assets/packages/cupertino_icons/assets/CupertinoIcons.ttf

@@ -5,19 +5,27 @@ import 'package:url_launcher/url_launcher.dart';
 
 class CustomSocialMediaButton extends StatelessWidget {
   const CustomSocialMediaButton(
-      {Key? key, required this.icon, required this.url})
+      {Key? key,
+      required this.icon,
+      required this.url,
+      required this.marginLeft,
+      this.iconSize})
       : super(key: key);
   final IconData icon;
   final String url;
+  final double marginLeft;
+  final double? iconSize;
   @override
   Widget build(BuildContext context) {
-    return IconButton(
-      padding: const EdgeInsets.only(left: 40),
-      onPressed: () => launch(url),
-      icon: Icon(
-        icon,
-        color: Colors.white,
-        size: 30,
+    return Container(
+      margin: EdgeInsets.only(left: marginLeft),
+      child: IconButton(
+        onPressed: () => launch(url),
+        icon: Icon(
+          icon,
+          color: Colors.white,
+          size: iconSize ?? 40,
+        ),
       ),
     );
   }
