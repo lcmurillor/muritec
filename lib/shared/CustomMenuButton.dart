@@ -12,13 +12,15 @@ class CustomMenuButton extends StatefulWidget {
       required this.onPressed,
       required this.marginLeft,
       this.marginVertical,
-      required this.delay})
+      required this.delay,
+      this.fontSize})
       : super(key: key);
   final String text;
   final Function onPressed;
   final double marginLeft;
   final double? marginVertical;
   final int delay;
+  final double? fontSize;
 
   @override
   State<CustomMenuButton> createState() => _CustomMenuButtonState();
@@ -51,7 +53,7 @@ class _CustomMenuButtonState extends State<CustomMenuButton> {
               child: Text(
                 widget.text,
                 style: GoogleFonts.poppins(
-                    fontSize: 18,
+                    fontSize: widget.fontSize ?? 18,
                     //fontWeight: isHover ? FontWeight.bold : FontWeight.normal,
                     color: isHover ? Colors.black : MainTheme.mainGray),
               )),
