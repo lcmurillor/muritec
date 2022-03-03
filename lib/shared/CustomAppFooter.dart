@@ -1,4 +1,4 @@
-// ignore_for_file: file_names
+// ignore_for_file: file_names, avoid_unnecessary_containers
 import 'package:app_muritec/shared/sheards.dart';
 import 'package:app_muritec/theme/theme.dart';
 import 'package:flutter/Material.dart';
@@ -12,7 +12,7 @@ class CustomAppFooter extends StatelessWidget {
   Widget build(BuildContext context) {
     return LayoutBuilder(
       builder: (BuildContext context, BoxConstraints constraints) {
-        return (constraints.maxWidth > 650)
+        return (constraints.maxWidth > 700)
             ? const _FullSizedFooter()
             : const _MediumSizedFooter();
       },
@@ -47,18 +47,22 @@ class _FullSizedFooter extends StatelessWidget {
           const CustomSocialMediaButton(
             icon: MdiIcons.instagram,
             url: 'https://www.instagram.com/lcmurillor/?hl=es',
+            marginLeft: 40,
           ),
           const CustomSocialMediaButton(
             icon: MdiIcons.linkedin,
             url: 'https://www.linkedin.com/in/lcmurillor/',
+            marginLeft: 40,
           ),
           const CustomSocialMediaButton(
             icon: MdiIcons.github,
             url: 'https://github.com/lcmurillor',
+            marginLeft: 40,
           ),
           const CustomSocialMediaButton(
             icon: MdiIcons.facebook,
             url: 'https://www.facebook.com/profile.php?id=100072001248682',
+            marginLeft: 40,
           ),
         ],
       ),
@@ -80,38 +84,51 @@ class _MediumSizedFooter extends StatelessWidget {
       padding: const EdgeInsets.symmetric(horizontal: 40),
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.center,
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           //Logo de la empresa
-          SvgPicture.asset(
+          Container(
+              child: SvgPicture.asset(
             'assets/IsologotipoBlanco.svg',
             semanticsLabel: 'MuriTEC logo',
             fit: BoxFit.cover,
-            height: 100,
-          ),
-          const Spacer(),
+            height: 80,
+          )),
           //Botones dle menu
-          Column(mainAxisAlignment: MainAxisAlignment.center, children: [
-            Row(children: const [
-              CustomSocialMediaButton(
-                icon: MdiIcons.instagram,
-                url: 'https://www.instagram.com/lcmurillor/?hl=es',
-              ),
-              CustomSocialMediaButton(
-                icon: MdiIcons.linkedin,
-                url: 'https://www.linkedin.com/in/lcmurillor/',
-              )
+          Container(
+            child:
+                Column(mainAxisAlignment: MainAxisAlignment.center, children: [
+              Row(children: const [
+                CustomSocialMediaButton(
+                  icon: MdiIcons.instagram,
+                  url: 'https://www.instagram.com/lcmurillor/?hl=es',
+                  marginLeft: 0,
+                  iconSize: 25,
+                ),
+                CustomSocialMediaButton(
+                  icon: MdiIcons.linkedin,
+                  url: 'https://www.linkedin.com/in/lcmurillor/',
+                  marginLeft: 10,
+                  iconSize: 25,
+                )
+              ]),
+              Row(children: const [
+                CustomSocialMediaButton(
+                  icon: MdiIcons.github,
+                  url: 'https://github.com/lcmurillor',
+                  marginLeft: 0,
+                  iconSize: 25,
+                ),
+                CustomSocialMediaButton(
+                  icon: MdiIcons.facebook,
+                  url:
+                      'https://www.facebook.com/profile.php?id=100072001248682',
+                  marginLeft: 10,
+                  iconSize: 25,
+                ),
+              ])
             ]),
-            Row(children: const [
-              CustomSocialMediaButton(
-                icon: MdiIcons.github,
-                url: 'https://github.com/lcmurillor',
-              ),
-              CustomSocialMediaButton(
-                icon: MdiIcons.facebook,
-                url: 'https://www.facebook.com/profile.php?id=100072001248682',
-              ),
-            ])
-          ]),
+          ),
         ],
       ),
     );

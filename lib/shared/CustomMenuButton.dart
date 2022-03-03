@@ -10,14 +10,14 @@ class CustomMenuButton extends StatefulWidget {
       {Key? key,
       required this.text,
       required this.onPressed,
-      required this.paddingLeft,
-      this.paddinfVerticlal,
+      required this.marginLeft,
+      this.marginVertical,
       required this.delay})
       : super(key: key);
   final String text;
   final Function onPressed;
-  final double paddingLeft;
-  final double? paddinfVerticlal;
+  final double marginLeft;
+  final double? marginVertical;
   final int delay;
 
   @override
@@ -35,24 +35,27 @@ class _CustomMenuButtonState extends State<CustomMenuButton> {
       child: MouseRegion(
         onEnter: (_) => setState(() => isHover = true),
         onExit: (_) => setState(() => isHover = false),
-        child: TextButton(
-            style: ButtonStyle(
-              padding: MaterialStateProperty.all<EdgeInsetsGeometry>(
-                  EdgeInsets.only(
-                      left: widget.paddingLeft,
-                      top: widget.paddinfVerticlal ?? 0,
-                      bottom: widget.paddinfVerticlal ?? 0)),
-              overlayColor:
-                  MaterialStateProperty.all<Color>(Colors.transparent),
-            ),
-            onPressed: () => widget.onPressed(),
-            child: Text(
-              widget.text,
-              style: GoogleFonts.poppins(
-                  fontSize: 18,
-                  //fontWeight: isHover ? FontWeight.bold : FontWeight.normal,
-                  color: isHover ? Colors.black : MainTheme.mainGray),
-            )),
+        child: Container(
+          margin: EdgeInsets.only(
+              left: widget.marginLeft,
+              top: widget.marginVertical ?? 0,
+              bottom: widget.marginVertical ?? 0),
+          child: TextButton(
+              style: ButtonStyle(
+                padding: MaterialStateProperty.all<EdgeInsetsGeometry>(
+                    const EdgeInsets.all(0)),
+                overlayColor:
+                    MaterialStateProperty.all<Color>(Colors.transparent),
+              ),
+              onPressed: () => widget.onPressed(),
+              child: Text(
+                widget.text,
+                style: GoogleFonts.poppins(
+                    fontSize: 18,
+                    //fontWeight: isHover ? FontWeight.bold : FontWeight.normal,
+                    color: isHover ? Colors.black : MainTheme.mainGray),
+              )),
+        ),
       ),
     );
   }
