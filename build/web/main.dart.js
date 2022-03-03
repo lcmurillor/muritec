@@ -34077,7 +34077,7 @@ aL(){return new A.Hl(B.m)}}
 A.Hl.prototype={
 bl(){this.bN()},
 K(a,b){var s=null,r=A.aat(b,t.QU),q=r.a,p=A.aca(),o=t.D,n=A.a([B.N8],o)
-if(r.a>80)B.c.D(n,A.a([B.Hg,new A.h_("Acerca de nosotros",new A.a0H(),0,5,40,s),new A.h_("Experiencia",new A.a0I(),0,5,80,s),new A.h_("cont\xe1ctanos",new A.a0J(),0,5,120,s)],o))
+if(r.a>80)B.c.D(n,A.a([B.Hg,new A.h_("Acerca de nosotros",new A.a0H(),0,2,40,s),new A.h_("Experiencia",new A.a0I(),0,2,80,s),new A.h_("cont\xe1ctanos",new A.a0J(),0,2,120,s)],o))
 return A.f7(s,A.a4Z(n,B.cN,B.aw),s,p,q,s,B.Aq,1/0)}}
 A.a0H.prototype={
 $0(){},
@@ -56418,7 +56418,7 @@ B.Hd=new A.T(1e5,1e5)
 B.He=new A.T(64,36)
 B.Hf=new A.T(1/0,1/0)
 B.jj=new A.jS(0,0,null,null)
-B.Hg=new A.jS(null,15,null,null)
+B.Hg=new A.jS(null,10,null,null)
 B.th=new A.v_(null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null)
 B.O5=new A.oU(3,"hide")
 B.ti=new A.oU(5,"timeout")

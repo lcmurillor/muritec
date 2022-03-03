@@ -106,26 +106,26 @@ class _MediumSizedMenuState extends State<_MediumSizedMenu> {
         children: [
           const _MenuTitle(),
           if (size.getmenuSize() > 80) ...[
-            const SizedBox(height: 15),
+            const SizedBox(height: 10),
             CustomMenuButton(
               text: 'Acerca de nosotros',
               onPressed: () {},
               marginLeft: 0,
-              marginVertical: 5,
+              marginVertical: 2,
               delay: 40,
             ),
             CustomMenuButton(
               text: 'Experiencia',
               onPressed: () {},
               marginLeft: 0,
-              marginVertical: 5,
+              marginVertical: 2,
               delay: 80,
             ),
             CustomMenuButton(
               text: 'contáctanos',
               onPressed: () {},
               marginLeft: 0,
-              marginVertical: 5,
+              marginVertical: 2,
               delay: 120,
             ),
           ],
