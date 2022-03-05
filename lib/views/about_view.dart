@@ -9,7 +9,7 @@ class AboutView extends StatelessWidget {
       children: [
         SizedBox(height: (MediaQuery.of(context).size.width > 910) ? 140 : 80),
         Image.asset(
-          'img1.jpg',
+          'assets/img1.jpg',
           height: 300,
           width: double.infinity,
           fit: BoxFit.cover,
