@@ -2,7 +2,6 @@ import 'package:app_muritec/providers/menu_provider.dart';
 import 'package:app_muritec/router/router.dart';
 import 'package:app_muritec/theme/theme.dart';
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
 
 void main() => runApp(const AppState());
 

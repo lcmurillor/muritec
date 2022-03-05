@@ -13,7 +13,7 @@ class MainLayoutPage extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Stack(children: const [AboutView(), CustomAppMenu()]),
-            const SizedBox(height: 400),
+            const SizedBox(height: 300),
             const CustomAppFooter()
           ],
         ),

@@ -5,27 +5,27 @@ import 'package:app_muritec/shared/sheards.dart';
 import 'package:app_muritec/theme/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:provider/provider.dart';
 
 class CustomAppMenu extends StatelessWidget {
   const CustomAppMenu({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    MenuProvider menu = Provider.of<MenuProvider>(context);
     return LayoutBuilder(
       builder: (_, constraints) {
-        return (constraints.maxWidth > 910)
-            ? const _FullSizedMenu()
-            : const _MediumSizedMenu();
+        if ((constraints.maxWidth > 910)) {
+          return const _FullSizedMenu();
+        } else {
+          return _MediumSizedMenu(menu: menu);
+        }
       },
     );
   }
 }
 
 class _FullSizedMenu extends StatelessWidget {
-  const _FullSizedMenu({
-    Key? key,
-  }) : super(key: key);
+  const _FullSizedMenu({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -80,7 +80,8 @@ class _FullSizedMenu extends StatelessWidget {
 }
 
 class _MediumSizedMenu extends StatefulWidget {
-  const _MediumSizedMenu({Key? key}) : super(key: key);
+  const _MediumSizedMenu({Key? key, required this.menu}) : super(key: key);
+  final MenuProvider menu;
 
   @override
   State<_MediumSizedMenu> createState() => _MediumSizedMenuState();
@@ -95,17 +96,16 @@ class _MediumSizedMenuState extends State<_MediumSizedMenu> {
 
   @override
   Widget build(BuildContext context) {
-    MenuProvider size = Provider.of<MenuProvider>(context);
     return Container(
       width: double.infinity,
-      height: size.getmenuSize(),
+      height: widget.menu.getmenuSize(),
       padding: const EdgeInsets.only(left: 40, right: 40, top: 16),
       decoration: _customBoxDecoration(),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          const _MenuTitle(),
-          if (size.getmenuSize() > 80) ...[
+          _MenuTitle(menu: widget.menu),
+          if (widget.menu.getmenuSize() > 80) ...[
             const SizedBox(height: 15),
             CustomMenuButton(
               text: 'Acerca de nosotros',
@@ -136,10 +136,13 @@ class _MediumSizedMenuState extends State<_MediumSizedMenu> {
 }
 
 class _MenuTitle extends StatelessWidget {
-  const _MenuTitle({Key? key}) : super(key: key);
+  const _MenuTitle({
+    Key? key,
+    required this.menu,
+  }) : super(key: key);
+  final MenuProvider menu;
   @override
   Widget build(BuildContext context) {
-    MenuProvider size = Provider.of<MenuProvider>(context);
     return Row(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -153,9 +156,9 @@ class _MenuTitle extends StatelessWidget {
         const Spacer(),
         //Botones dle menu
         IconButton(
-            onPressed: () => (size.getmenuSize() == 80)
-                ? {size.setMenuSize(250)}
-                : {size.setMenuSize(80)},
+            onPressed: () => (menu.getmenuSize() == 80)
+                ? {menu.setDisplayMenuSize()}
+                : {menu.setMediumSize()},
             icon: Icon(
               Icons.menu,
               size: 40,
