@@ -29,6 +29,8 @@ environment:
 dependencies:
   animate_do: ^2.1.0
   cupertino_icons: ^1.0.2
+  firebase_core: ^1.13.1
+  firebase_storage: ^10.2.9
   fluro: ^2.0.3
   flutter:
     sdk: flutter

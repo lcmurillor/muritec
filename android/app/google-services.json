@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1019876812752",
+    "project_id": "muritec-b1e51",
+    "storage_bucket": "muritec-b1e51.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1019876812752:android:a741b6f87896d286073bd5",
+        "android_client_info": {
+          "package_name": "com.example.app_muritec"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1019876812752-kib5vpj7l9bh3na9g5e62dg7r7kav5vj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBxXxUbs9j6FUNUqyrvaMzoxE0Y075BT-o"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1019876812752-kib5vpj7l9bh3na9g5e62dg7r7kav5vj.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

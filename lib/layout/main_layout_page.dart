@@ -1,4 +1,5 @@
 import 'package:app_muritec/shared/sheards.dart';
+import 'package:app_muritec/views/about_view.dart';
 import 'package:flutter/material.dart';
 
 class MainLayoutPage extends StatelessWidget {
@@ -7,10 +8,16 @@ class MainLayoutPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
-          child: Column(
-        children: const [CustomAppMenu(), Spacer(), CustomAppFooter()],
-      )),
+      body: SingleChildScrollView(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            Stack(children: const [AboutView(), CustomAppMenu()]),
+            const SizedBox(height: 400),
+            const CustomAppFooter()
+          ],
+        ),
+      ),
     );
   }
 }
