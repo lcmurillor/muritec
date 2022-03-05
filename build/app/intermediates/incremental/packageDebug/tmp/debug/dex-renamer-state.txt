@@ -1,4 +1,0 @@
-#Sat Mar 05 09:11:13 CST 2022
-base.0=D\:\\Desarrollo\\MuriTEC\\app web flutter\\app_muritec\\build\\app\\intermediates\\dex\\debug\\mergeDexDebug\\classes.dex
-renamed.0=classes.dex
-path.0=classes.dex
