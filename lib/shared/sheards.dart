@@ -4,3 +4,4 @@ export 'package:app_muritec/shared/custom_banner_button.dart';
 export 'package:app_muritec/shared/custom_banner_title.dart';
 export 'package:app_muritec/shared/custom_menu_button.dart';
 export 'package:app_muritec/shared/custom_social_media_button.dart';
+export 'package:app_muritec/shared/custom_services_scroll_card.dart';

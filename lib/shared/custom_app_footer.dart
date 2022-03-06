@@ -31,7 +31,7 @@ class _FullSizedFooter extends StatelessWidget {
       width: double.infinity,
       height: 140,
       color: MainTheme.mainGray,
-      padding: const EdgeInsets.symmetric(horizontal: 100),
+      padding: MainTheme.mainPadding,
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [

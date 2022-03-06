@@ -1,11 +1,17 @@
-import 'package:app_muritec/views/about_view.dart';
 import 'package:flutter/Material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class CustomBannerTitle extends StatelessWidget {
-  const CustomBannerTitle({Key? key, required this.widget}) : super(key: key);
+  const CustomBannerTitle(
+      {Key? key,
+      required this.width,
+      required this.widthTitleValue,
+      required this.widthTextValue})
+      : super(key: key);
 
-  final AboutView widget;
+  final double width;
+  final double widthTitleValue;
+  final double widthTextValue;
 
   @override
   Widget build(BuildContext context) {
@@ -13,30 +19,35 @@ class CustomBannerTitle extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.center,
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
+        /**
+         * Costructor del titulo con la tipografia de Muritec
+         */
         SizedBox(
           child: FittedBox(
             fit: BoxFit.contain,
             child: Text('MuriTEC',
                 style: GoogleFonts.audiowide(
                     color: Colors.white,
-                    fontSize: (widget.width > 740)
-                        ? widget.width * 0.05
-                        : widget.width * 0.10)),
+                    fontSize: (width > 740)
+                        ? width * widthTitleValue
+                        : width * widthTitleValue)),
           ),
         ),
+        /**
+         * Constructor de parrafo inferir con la descripcion breve de muritec
+         */
         FittedBox(
           fit: BoxFit.cover,
           child: SizedBox(
-            width: (widget.width > 740)
-                ? (widget.width * 0.6) - 100
-                : (widget.width * 0.7),
+            width: (width > 740)
+                ? (width * widthTextValue) - 100
+                : (width * widthTextValue),
             child: Text(
                 'Somos un equipo multidisciplinario enfocado en las distintas áreas de las Tecnologías de la información.',
                 softWrap: true,
                 maxLines: 4,
                 style: GoogleFonts.poppins(
-                    color: Colors.white,
-                    fontSize: (widget.width > 740) ? 22 : 14)),
+                    color: Colors.white, fontSize: (width > 740) ? 22 : 14)),
           ),
         )
       ],

@@ -1,5 +1,6 @@
 import 'package:app_muritec/providers/menu_provider.dart';
 import 'package:app_muritec/shared/sheards.dart';
+import 'package:app_muritec/theme/theme.dart';
 import 'package:flutter/Material.dart';
 
 class AboutView extends StatefulWidget {
@@ -38,7 +39,7 @@ class _AboutViewState extends State<AboutView> {
               : widget.height - widget.menu.getmenuSize(),
           child: Stack(children: [
             /**
-             * Contenedor de la iamgen con efecto paralax
+             * Define la posicion de la imagen con el efecto paralax
              */
             Positioned(
                 top: -0.25 * offset,
@@ -46,15 +47,24 @@ class _AboutViewState extends State<AboutView> {
                     height: widget.height * 0.40,
                     width: widget.width,
                     fit: BoxFit.cover)),
-            Container(
-              decoration: const BoxDecoration(
-                gradient: LinearGradient(colors: [
-                  Color.fromRGBO(34, 102, 164, 0.5),
-                  Colors.transparent
-                ], stops: [
-                  0.1,
-                  0.9
-                ], begin: Alignment.topLeft, end: Alignment.bottomRight),
+            /**
+             * Este contnedor es el espacio que se encuentra sobre la imagen
+             * que esta posisionada atras, ademas da el efecto de transparencia
+             */
+            Positioned(
+              top: -0.25 * offset,
+              child: Container(
+                height: widget.height * 0.40,
+                width: widget.width,
+                decoration: BoxDecoration(
+                  gradient: LinearGradient(colors: [
+                    MainTheme.darkBlue.withOpacity(0.5),
+                    Colors.transparent
+                  ], stops: const [
+                    0.1,
+                    0.9
+                  ], begin: Alignment.topLeft, end: Alignment.bottomRight),
+                ),
               ),
             ),
             /**
@@ -68,46 +78,21 @@ class _AboutViewState extends State<AboutView> {
                     /**
                    * Contenedor que contruye en su totalalidad el banner superior en tamaño completo
                    */
-                    Container(
-                      padding: const EdgeInsets.symmetric(horizontal: 100),
-                      height: widget.height * 0.40,
-                      child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceAround,
-                          children: [
-                            CustomBannerTitle(widget: widget),
-                            CustomBannerButton(widget: widget)
-                          ]),
-                    )
+                    _FullSizedBanner(widget: widget)
                   ] else ...[
                     /**
-                   * Contenedor que contruye en su totalalidad el banre superior en tamaño reducido
+                   * Contenedor que contruye en su totalalidad el banne superior en tamaño reducido
                    */
-                    Container(
-                      //padding: const EdgeInsets.symmetric(horizontal: 100),
-                      height: widget.height * 0.35,
-                      child: Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            CustomBannerTitle(widget: widget),
-                            const SizedBox(height: 10),
-                            CustomBannerButton(widget: widget)
-                          ]),
-                    )
+                    _MediumSizedBanner(widget: widget)
                   ],
-
                   /**
                    * Todo el contendio despues de la imagnes
                    */
-                  Container(
-                    width: widget.width,
-                    height: 1000,
-                    color: Colors.amber,
-                  ),
+                  CustomServicesScrollCard(widget: widget),
                   const CustomAppFooter()
                 ],
               ),
             )
-            //const CustomAppMenu()
           ]),
         ),
       ),
@@ -115,7 +100,64 @@ class _AboutViewState extends State<AboutView> {
   }
 
   bool updateOffset(ScrollNotification scrollNotification) {
-    setState(() => offset = scrollNotification.metrics.pixels);
+    setState(() {
+      if (scrollNotification.metrics.axisDirection == AxisDirection.down) {
+        offset = scrollNotification.metrics.pixels;
+      }
+    });
     return true;
+  }
+}
+
+class _MediumSizedBanner extends StatelessWidget {
+  const _MediumSizedBanner({
+    Key? key,
+    required this.widget,
+  }) : super(key: key);
+
+  final AboutView widget;
+
+  @override
+  Widget build(BuildContext context) {
+    return SizedBox(
+      //padding: const EdgeInsets.symmetric(horizontal: 100),
+      height: widget.height * 0.35,
+      child: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
+        CustomBannerTitle(
+            width: widget.width, widthTextValue: 0.7, widthTitleValue: 0.10),
+        const SizedBox(height: 10),
+        CustomBannerButton(
+          widget: widget,
+          height: 0.10,
+          width: 0.50,
+        )
+      ]),
+    );
+  }
+}
+
+class _FullSizedBanner extends StatelessWidget {
+  const _FullSizedBanner({
+    Key? key,
+    required this.widget,
+  }) : super(key: key);
+
+  final AboutView widget;
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      padding: const EdgeInsets.symmetric(horizontal: 100),
+      height: widget.height * 0.40,
+      child: Row(mainAxisAlignment: MainAxisAlignment.spaceAround, children: [
+        CustomBannerTitle(
+            width: widget.width, widthTextValue: 0.6, widthTitleValue: 0.05),
+        CustomBannerButton(
+          widget: widget,
+          height: 0.10,
+          width: 0.20,
+        )
+      ]),
+    );
   }
 }

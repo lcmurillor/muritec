@@ -32,7 +32,7 @@ class _FullSizedMenu extends StatelessWidget {
     return Container(
       width: double.infinity,
       height: 140,
-      padding: const EdgeInsets.symmetric(horizontal: 100),
+      padding: MainTheme.mainPadding,
       decoration: _customBoxDecoration(),
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.end,
