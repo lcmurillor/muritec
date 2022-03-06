@@ -1,7 +1,6 @@
 import 'package:app_muritec/providers/menu_provider.dart';
-import 'package:app_muritec/shared/custom_app_footer.dart';
+import 'package:app_muritec/shared/sheards.dart';
 import 'package:flutter/Material.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 class AboutView extends StatefulWidget {
   const AboutView({
@@ -65,23 +64,37 @@ class _AboutViewState extends State<AboutView> {
             SingleChildScrollView(
               child: Column(
                 children: [
-                  /**
-                   * Contendio que se encuenta sopre la imagen
+                  if (widget.width > 740) ...[
+                    /**
+                   * Contenedor que contruye en su totalalidad el banner superior en tamaño completo
                    */
-                  SizedBox(
-                    //padding: const EdgeInsets.symmetric(horizontal: 100),
-                    height: widget.height * 0.70,
-                    child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceAround,
-                        children: [
-                          _FullSizeText(widget: widget),
-                          TextButton(
-                            //style: ButtonStyle(side: 50.0,23.0),
-                            onPressed: () {},
-                            child: const Text('Contátanos'),
-                          ),
-                        ]),
-                  ),
+                    Container(
+                      padding: const EdgeInsets.symmetric(horizontal: 100),
+                      height: widget.height * 0.40,
+                      child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceAround,
+                          children: [
+                            CustomBannerTitle(widget: widget),
+                            CustomBannerButton(widget: widget)
+                          ]),
+                    )
+                  ] else ...[
+                    /**
+                   * Contenedor que contruye en su totalalidad el banre superior en tamaño reducido
+                   */
+                    Container(
+                      //padding: const EdgeInsets.symmetric(horizontal: 100),
+                      height: widget.height * 0.35,
+                      child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            CustomBannerTitle(widget: widget),
+                            const SizedBox(height: 10),
+                            CustomBannerButton(widget: widget)
+                          ]),
+                    )
+                  ],
+
                   /**
                    * Todo el contendio despues de la imagnes
                    */
@@ -104,37 +117,5 @@ class _AboutViewState extends State<AboutView> {
   bool updateOffset(ScrollNotification scrollNotification) {
     setState(() => offset = scrollNotification.metrics.pixels);
     return true;
-  }
-}
-
-class _FullSizeText extends StatelessWidget {
-  const _FullSizeText({Key? key, required this.widget}) : super(key: key);
-
-  final AboutView widget;
-
-  @override
-  Widget build(BuildContext context) {
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.center,
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        SizedBox(
-          child: Text('MuriTEC',
-              style: GoogleFonts.audiowide(
-                  color: Colors.white, fontSize: widget.width * 0.05)),
-        ),
-        FittedBox(
-          fit: BoxFit.cover,
-          child: SizedBox(
-            width: (widget.width * 0.5) - 200,
-            child: Text(
-                'Somos un equipo multidisciplinario enfocado en las distintas áreas de las Tecnologías de la información.',
-                softWrap: true,
-                maxLines: 4,
-                style: GoogleFonts.poppins(color: Colors.white, fontSize: 20)),
-          ),
-        )
-      ],
-    );
   }
 }
