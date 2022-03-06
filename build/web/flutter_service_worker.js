@@ -17,15 +17,15 @@ const RESOURCES = {
 "canvaskit/canvaskit.wasm": "4b83d89d9fecbea8ca46f2f760c5a9ba",
 "canvaskit/profiling/canvaskit.js": "ae2949af4efc61d28a4a80fffa1db900",
 "canvaskit/profiling/canvaskit.wasm": "95e736ab31147d1b2c7b25f11d4c32cd",
-"favicon.png": "5dcef449791fa27946b3d35ad8803796",
-"icons/Icon-192.png": "ac9a721a12bbc803b44f645561ecb1e1",
-"icons/Icon-512.png": "96e752610906ba2a93c65f8abe1645f1",
-"icons/Icon-maskable-192.png": "c457ef57daa1d16f64b27b786ec2ea3c",
-"icons/Icon-maskable-512.png": "301a7604d45b3e739efc881eb04896ea",
-"index.html": "eb0afd3538b24ef431fbd6af9da4fb73",
-"/": "eb0afd3538b24ef431fbd6af9da4fb73",
+"favicon.png": "3afa0d4685b06282ee7fe8ea27eeb3f5",
+"icons/Icon-192.png": "3b48e8981038494643695e323c95ab96",
+"icons/Icon-512.png": "773335582f58b475bd773282b5d3bbac",
+"icons/Icon-maskable-192.png": "3b48e8981038494643695e323c95ab96",
+"icons/Icon-maskable-512.png": "ecc42b32997f10d21f5c0d5783898425",
+"index.html": "03f0b22eddf656b63eb2cb65a7b2ca66",
+"/": "03f0b22eddf656b63eb2cb65a7b2ca66",
 "main.dart.js": "94b65522998d0f68ec7dff7e29fd759c",
-"manifest.json": "a2256c7cecfeb78cebe4aa57ef367119",
+"manifest.json": "3487e65e20c04e6c610b6d73deaf1e7d",
 "version.json": "d485f6e363fc7127c8072fa1c0625eb2"
 };
 

@@ -1,11 +1,11 @@
 {
-    "name": "app_muritec",
-    "short_name": "app_muritec",
+    "name": "MuriTEC Soluciones Tecnológicas",
+    "short_name": "MuriTEC",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",
     "theme_color": "#0175C2",
-    "description": "A new Flutter project.",
+    "description": "Somos un equipo multidisciplinario enfocado en las distintas áreas de las Tecnologías de la información.",
     "orientation": "portrait-primary",
     "prefer_related_applications": false,
     "icons": [
