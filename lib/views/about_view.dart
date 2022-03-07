@@ -79,6 +79,7 @@ class _AboutViewState extends State<AboutView> {
                * Todo el contendio despues de la imagnes
                */
               CustomServicesScrollCard(widget: widget),
+              const CustomInfoContainer(),
               const CustomAppFooter()
             ],
           ),

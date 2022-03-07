@@ -15,7 +15,7 @@ class ServicesTopCard extends StatelessWidget {
   Widget build(BuildContext context) {
     double width = MediaQuery.of(context).size.width;
     return Container(
-      margin: EdgeInsets.symmetric(vertical: 70, horizontal: width * 0.07),
+      margin: EdgeInsets.symmetric(vertical: 70, horizontal: width * 0.03),
       width: 320,
       decoration: BoxDecoration(
           color: Colors.white,
@@ -34,13 +34,14 @@ class ServicesTopCard extends StatelessWidget {
         Container(
             padding: const EdgeInsets.symmetric(vertical: 30, horizontal: 30),
             decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(100),
-                boxShadow: [
-                  BoxShadow(
-                      color: MainTheme.shadowBlue,
-                      offset: const Offset(0, 0),
-                      blurRadius: 40)
-                ]),
+              borderRadius: BorderRadius.circular(100),
+              // boxShadow: [
+              //   BoxShadow(
+              //       color: MainTheme.shadowBlue,
+              //       offset: const Offset(0, 0),
+              //       blurRadius: 40)
+              // ],
+            ),
             child: SvgPicture.asset(path)),
         /**
          * Titulo proncial del Card

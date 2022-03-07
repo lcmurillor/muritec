@@ -6,3 +6,4 @@ export 'package:app_muritec/shared/custom_menu_button.dart';
 export 'package:app_muritec/shared/custom_social_media_button.dart';
 export 'package:app_muritec/shared/custom_services_scroll_card.dart';
 export 'package:app_muritec/shared/services_top_card.dart';
+export 'package:app_muritec/shared/custom_info_container.dart';

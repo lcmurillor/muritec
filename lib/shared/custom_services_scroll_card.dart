@@ -25,6 +25,8 @@ class CustomServicesScrollCard extends StatelessWidget {
           PointerDeviceKind.mouse,
         }),
         child: ListView.builder(
+          padding: EdgeInsets.symmetric(
+              horizontal: (widget.width > 400) ? widget.width * 0.10 : 0),
           controller: controller,
           physics: const BouncingScrollPhysics(),
           itemCount: 3,
