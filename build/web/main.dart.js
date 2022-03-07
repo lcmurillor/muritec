@@ -36494,9 +36494,9 @@ A.Ci.prototype={
 M(a,b){var s=null,r=A.ZY(),q=A.abo(b).G6(A.cu([B.c1,B.b4],t.T))
 return A.di(s,A.agB(q,new A.E5(new A.a0V(new A.Rj(),3,!0,!0,!0),s,B.aE,!1,r,!1,B.vA,!1,s,3,B.ba,B.GX,s,B.a4,s)),B.Ag,s,500,s,s,1/0)}}
 A.Rj.prototype={
-$2(a,b){if(b===0)return B.Hw
-else if(b===1)return B.Hx
-return B.Hy},
+$2(a,b){if(b===0)return B.Hy
+else if(b===1)return B.Hw
+return B.Hx},
 $S:444}
 A.fI.prototype={
 M(a,b){var s=this,r=null,q=s.f
@@ -63932,9 +63932,9 @@ B.tZ=new A.c7(8192)
 B.Hu=new A.c7(8388608)
 B.u_=new A.wP("RenderViewport.twoPane")
 B.Hv=new A.wP("RenderViewport.excludeFromScrolling")
-B.Hw=new A.kJ("pc.svg","Computaci\xf3n","Mantenimiento preventivo y correctivo de equipos inform\xe1ticos como computadoras port\xe1tiles, de escritorio e impresoras.",null)
-B.Hx=new A.kJ("red.svg","Redes","Cotizaci\xf3n, venta e instalaci\xf3n de equipos de red para entornos dom\xe9sticos.",null)
-B.Hy=new A.kJ("code.svg","programaci\xf3n","Desarrollo de aplicaciones multiplataforma a media, implantando las tecnolog\xedas m\xe1s populares y solicitas del mercado actual.",null)
+B.Hw=new A.kJ("assets/red.svg","Redes","Cotizaci\xf3n, venta e instalaci\xf3n de equipos de red para entornos dom\xe9sticos.",null)
+B.Hx=new A.kJ("assets/code.svg","programaci\xf3n","Desarrollo de aplicaciones multiplataforma a media, implantando las tecnolog\xedas m\xe1s populares y solicitas del mercado actual.",null)
+B.Hy=new A.kJ("assets/pc.svg","Computaci\xf3n","Mantenimiento preventivo y correctivo de equipos inform\xe1ticos como computadoras port\xe1tiles, de escritorio e impresoras.",null)
 B.Gz=new A.h_(3,"invertedStylus")
 B.FJ=new A.bm([B.c1,null,B.tv,null,B.Gz,null],A.O("bm<h_,aq>"))
 B.Hz=new A.dG(B.FJ,A.O("dG<h_>"))

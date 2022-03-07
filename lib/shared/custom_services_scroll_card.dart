@@ -32,19 +32,19 @@ class CustomServicesScrollCard extends StatelessWidget {
           itemBuilder: (_, index) {
             if (index == 0) {
               return const ServicesTopCard(
-                  path: 'pc.svg',
+                  path: 'assets/pc.svg',
                   text:
                       'Mantenimiento preventivo y correctivo de equipos informáticos como computadoras portátiles, de escritorio e impresoras.',
                   title: 'Computación');
             } else if (index == 1) {
               return const ServicesTopCard(
-                  path: 'red.svg',
+                  path: 'assets/red.svg',
                   text:
                       'Cotización, venta e instalación de equipos de red para entornos domésticos.',
                   title: 'Redes');
             }
             return const ServicesTopCard(
-                path: 'code.svg',
+                path: 'assets/code.svg',
                 text:
                     'Desarrollo de aplicaciones multiplataforma a media, implantando las tecnologías más populares y solicitas del mercado actual.',
                 title: 'programación');
