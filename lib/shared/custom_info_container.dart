@@ -23,7 +23,7 @@ class CustomInfoContainer extends StatelessWidget {
             Container(
                 margin: EdgeInsets.symmetric(vertical: (width > 650) ? 40 : 20),
                 child: const _FullSizedContainer(
-                  path: 'asstes/target.svg',
+                  path: 'assets/target.svg',
                   title: 'Misión',
                   text:
                       'Ofrecer servicios orientados en las Tecnológicas de la Información, los cuales se puedan ajustar a las necesidades de cualquier tipo de cliente. Con nuestro equipo situado en el Cantón de Tilarán, buscamos ayudar a las personas de nuestra comunidad, instruyéndolos acerca de la tecnología y como innovarse.',
@@ -31,7 +31,7 @@ class CustomInfoContainer extends StatelessWidget {
             Container(
                 margin: EdgeInsets.symmetric(vertical: (width > 650) ? 40 : 20),
                 child: const _FullSizedContainer(
-                  path: 'asstes/idea.svg',
+                  path: 'assets/idea.svg',
                   title: 'Visión',
                   text:
                       'Ser una empresa reconocida a nivel nacional la cual brinda servicios enfocados principalmente en el área de desarrollo de software. A su vez brindar oportunidad de experiencia laboral a jóvenes de zonas rurales que estén interesados en la tecnología.',
@@ -39,7 +39,7 @@ class CustomInfoContainer extends StatelessWidget {
             Container(
                 margin: EdgeInsets.symmetric(vertical: (width > 650) ? 40 : 20),
                 child: const _FullSizedContainer(
-                  path: 'asstes/love.svg',
+                  path: 'assets/love.svg',
                   title: 'Valores',
                   text:
                       'Honestidad. Transparencia. Calidad. Seguridad. Empatía. Creatividad.',
@@ -100,7 +100,7 @@ class _FullSizedContainer extends StatelessWidget {
               style: GoogleFonts.lato(
                   color: Colors.white,
                   fontWeight: FontWeight.w500,
-                  fontSize: 12)),
+                  fontSize: 14)),
         ),
       ],
     );

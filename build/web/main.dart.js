@@ -36474,15 +36474,15 @@ if(q)r-=100
 return A.iI(A.a([p,A.Da(B.R,A.h5(A.ia("Somos un equipo multidisciplinario enfocado en las distintas \xe1reas de las Tecnolog\xedas de la informaci\xf3n.",4,!0,A.oJ(B.i,q?22:14,B.N),s,s),s,r),B.B,B.bx)],t.p),B.aX,B.fd)}}
 A.Ck.prototype={
 M(a,b){var s,r=null,q=b.a7(t.w).f.a.a,p=q>650,o=p?B.dg:B.lI,n=p?B.a2:B.aX,m=p?40:20
-m=A.cu(r,B.On,r,r,r,new A.b_(0,m,0,m),r,r)
+m=A.cu(r,B.Om,r,r,r,new A.b_(0,m,0,m),r,r)
 s=p?40:20
-s=A.cu(r,B.Om,r,r,r,new A.b_(0,s,0,s),r,r)
+s=A.cu(r,B.Ol,r,r,r,new A.b_(0,s,0,s),r,r)
 p=p?40:20
-return A.cu(r,A.iI(A.a([m,s,A.cu(r,B.Ol,r,r,r,new A.b_(0,p,0,p),r,r)],t.p),n,B.a3),B.z3,r,r,r,o,q)}}
+return A.cu(r,A.iI(A.a([m,s,A.cu(r,B.On,r,r,r,new A.b_(0,p,0,p),r,r)],t.p),n,B.a3),B.z3,r,r,r,o,q)}}
 A.r2.prototype={
 M(a,b){var s,r=this,q=null,p=b.a7(t.w).f.a.a
 if(p>650){s=t.p
-return A.jo(A.a([A.iI(A.a([A.ia(r.d,q,q,A.oJ(B.i,72,B.al),q,q),A.h5(A.ia(r.c,q,q,A.aaU(B.i,18,B.N),q,q),q,p*0.4)],s),B.aX,B.a3),A.cu(B.R,A.xe(r.e,B.cd,q,q),q,q,q,q,q,q)],s),B.a2,B.FF,B.ap)}return A.iI(A.a([A.ia(r.d,q,q,A.oJ(B.i,50,B.al),q,q),A.h5(A.ia(r.c,q,q,A.aaU(B.i,12,B.N),q,q),q,q)],t.p),B.aX,B.a3)}}
+return A.jo(A.a([A.iI(A.a([A.ia(r.d,q,q,A.oJ(B.i,72,B.al),q,q),A.h5(A.ia(r.c,q,q,A.aaU(B.i,18,B.N),q,q),q,p*0.4)],s),B.aX,B.a3),A.cu(B.R,A.xe(r.e,B.cd,q,q),q,q,q,q,q,q)],s),B.a2,B.FF,B.ap)}return A.iI(A.a([A.ia(r.d,q,q,A.oJ(B.i,50,B.al),q,q),A.h5(A.ia(r.c,q,q,A.aaU(B.i,14,B.N),q,q),q,q)],t.p),B.aX,B.a3)}}
 A.tL.prototype={
 aE(){return new A.J9(B.m)},
 a27(){return this.d.$0()}}
@@ -64433,9 +64433,9 @@ B.bu=new A.nq(1,"active")
 B.Oj=new A.nq(2,"inactive")
 B.uT=new A.nq(3,"defunct")
 B.Ok=new A.JI(1,"small")
-B.Ol=new A.r2("Honestidad. Transparencia. Calidad. Seguridad. Empat\xeda. Creatividad.","Valores","asstes/love.svg",null)
-B.Om=new A.r2("Ser una empresa reconocida a nivel nacional la cual brinda servicios enfocados principalmente en el \xe1rea de desarrollo de software. A su vez brindar oportunidad de experiencia laboral a j\xf3venes de zonas rurales que est\xe9n interesados en la tecnolog\xeda.","Visi\xf3n","asstes/idea.svg",null)
-B.On=new A.r2("Ofrecer servicios orientados en las Tecnol\xf3gicas de la Informaci\xf3n, los cuales se puedan ajustar a las necesidades de cualquier tipo de cliente. Con nuestro equipo situado en el Cant\xf3n de Tilar\xe1n, buscamos ayudar a las personas de nuestra comunidad, instruy\xe9ndolos acerca de la tecnolog\xeda y como innovarse.","Misi\xf3n","asstes/target.svg",null)
+B.Ol=new A.r2("Ser una empresa reconocida a nivel nacional la cual brinda servicios enfocados principalmente en el \xe1rea de desarrollo de software. A su vez brindar oportunidad de experiencia laboral a j\xf3venes de zonas rurales que est\xe9n interesados en la tecnolog\xeda.","Visi\xf3n","assets/idea.svg",null)
+B.Om=new A.r2("Ofrecer servicios orientados en las Tecnol\xf3gicas de la Informaci\xf3n, los cuales se puedan ajustar a las necesidades de cualquier tipo de cliente. Con nuestro equipo situado en el Cant\xf3n de Tilar\xe1n, buscamos ayudar a las personas de nuestra comunidad, instruy\xe9ndolos acerca de la tecnolog\xeda y como innovarse.","Misi\xf3n","assets/target.svg",null)
+B.On=new A.r2("Honestidad. Transparencia. Calidad. Seguridad. Empat\xeda. Creatividad.","Valores","assets/love.svg",null)
 B.Oo=new A.JU(null)
 B.Op=new A.JV(null)
 B.ee=new A.nr(0,"idle")
