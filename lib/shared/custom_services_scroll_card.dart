@@ -14,7 +14,7 @@ class CustomServicesScrollCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final ScrollController controller = ScrollController();
+    //final ScrollController controller = ScrollController();
     return Container(
       width: double.infinity,
       height: 500,
@@ -27,7 +27,7 @@ class CustomServicesScrollCard extends StatelessWidget {
         child: ListView.builder(
           padding: EdgeInsets.symmetric(
               horizontal: (widget.width > 400) ? widget.width * 0.10 : 0),
-          controller: controller,
+          //controller: controller,
           physics: const BouncingScrollPhysics(),
           itemCount: 3,
           scrollDirection: Axis.horizontal,

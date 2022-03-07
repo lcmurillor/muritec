@@ -45,7 +45,10 @@ class CustomBannerButton extends StatelessWidget {
           child: Text('Contáctanos',
               softWrap: true,
               maxLines: 4,
-              style: GoogleFonts.poppins(color: Colors.white, fontSize: 25)),
+              style: GoogleFonts.poppins(
+                  color: Colors.white,
+                  fontSize: 25,
+                  fontWeight: FontWeight.w500)),
         ),
       ),
     );
