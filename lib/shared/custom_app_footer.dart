@@ -1,8 +1,9 @@
-// ignore_for_file: file_names, avoid_unnecessary_containers
+// ignore_for_file: avoid_unnecessary_containers
+
 import 'package:app_muritec/shared/sheards.dart';
 import 'package:app_muritec/theme/theme.dart';
-import 'package:flutter/Material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:flutter/Material.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 
 class CustomAppFooter extends StatelessWidget {

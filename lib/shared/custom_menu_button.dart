@@ -1,5 +1,3 @@
-// ignore_for_file: file_names
-
 import 'package:animate_do/animate_do.dart';
 import 'package:app_muritec/theme/theme.dart';
 import 'package:flutter/material.dart';
@@ -53,6 +51,7 @@ class _CustomMenuButtonState extends State<CustomMenuButton> {
               child: Text(
                 widget.text,
                 style: GoogleFonts.poppins(
+                    fontWeight: FontWeight.w500,
                     fontSize: widget.fontSize ?? 18,
                     color: isHover ? Colors.black : MainTheme.mainGray),
               )),

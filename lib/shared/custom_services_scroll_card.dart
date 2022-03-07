@@ -1,3 +1,4 @@
+import 'package:app_muritec/shared/sheards.dart';
 import 'package:app_muritec/theme/theme.dart';
 import 'package:app_muritec/views/views.dart';
 import 'package:flutter/Material.dart';
@@ -15,10 +16,9 @@ class CustomServicesScrollCard extends StatelessWidget {
   Widget build(BuildContext context) {
     final ScrollController controller = ScrollController();
     return Container(
-      padding: MainTheme.mainPadding,
       width: double.infinity,
-      height: widget.height * 0.7,
-      color: Colors.white,
+      height: 500,
+      color: MainTheme.graySoft,
       child: ScrollConfiguration(
         behavior: ScrollConfiguration.of(context).copyWith(dragDevices: {
           PointerDeviceKind.touch,
@@ -27,15 +27,27 @@ class CustomServicesScrollCard extends StatelessWidget {
         child: ListView.builder(
           controller: controller,
           physics: const BouncingScrollPhysics(),
-          itemCount: 4,
+          itemCount: 3,
           scrollDirection: Axis.horizontal,
           itemBuilder: (_, index) {
-            return Container(
-              margin: const EdgeInsets.symmetric(horizontal: 20, vertical: 50),
-              width: 305,
-              height: 50,
-              color: Colors.amber,
-            );
+            if (index == 0) {
+              return const ServicesTopCard(
+                  path: 'pc.svg',
+                  text:
+                      'Mantenimiento preventivo y correctivo de equipos informáticos como computadoras portátiles, de escritorio e impresoras.',
+                  title: 'Computación');
+            } else if (index == 1) {
+              return const ServicesTopCard(
+                  path: 'red.svg',
+                  text:
+                      'Cotización, venta e instalación de equipos de red para entornos domésticos.',
+                  title: 'Redes');
+            }
+            return const ServicesTopCard(
+                path: 'code.svg',
+                text:
+                    'Desarrollo de aplicaciones multiplataforma a media, implantando las tecnologías más populares y solicitas del mercado actual.',
+                title: 'programación');
           },
         ),
       ),

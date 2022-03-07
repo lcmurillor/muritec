@@ -6,6 +6,7 @@ class MainTheme {
   static Color darkBlue = const Color.fromRGBO(34, 102, 164, 1);
   static Color lightBlue = const Color.fromRGBO(36, 154, 218, 1);
   static Color grayBlue = const Color.fromRGBO(121, 171, 199, 1);
+  static Color graySoft = const Color.fromRGBO(247, 248, 252, 1);
   static EdgeInsets mainPadding = const EdgeInsets.symmetric(horizontal: 100);
   static BoxDecoration buttonDecoration = BoxDecoration(
       borderRadius: BorderRadius.circular(10),

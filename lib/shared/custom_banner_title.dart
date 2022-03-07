@@ -1,4 +1,5 @@
 import 'package:flutter/Material.dart';
+import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class CustomBannerTitle extends StatelessWidget {
@@ -47,7 +48,9 @@ class CustomBannerTitle extends StatelessWidget {
                 softWrap: true,
                 maxLines: 4,
                 style: GoogleFonts.poppins(
-                    color: Colors.white, fontSize: (width > 740) ? 22 : 14)),
+                    color: Colors.white,
+                    fontWeight: FontWeight.w500,
+                    fontSize: (width > 740) ? 22 : 14)),
           ),
         )
       ],
