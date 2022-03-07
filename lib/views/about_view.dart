@@ -66,9 +66,9 @@ class _AboutViewState extends State<AboutView> {
           Positioned(
               top: (widget.width > 650)
                   ? (offset * -0.85) + 1300
-                  : (offset * -0.85) + 900,
+                  : (offset * -0.85) + 1000,
               child: Image.asset('assets/img2.jpg',
-                  height: widget.height * 0.90,
+                  height: widget.height,
                   width: widget.width,
                   fit: BoxFit.cover)),
           /**
