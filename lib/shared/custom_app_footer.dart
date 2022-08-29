@@ -49,7 +49,7 @@ class _FullSizedFooter extends StatelessWidget {
           //Botones dle menu
           const CustomSocialMediaButton(
             icon: MdiIcons.instagram,
-            url: 'https://www.instagram.com/lcmurillor/?hl=es',
+            url: 'https://www.instagram.com/muri.tec/?hl=es',
             marginLeft: 40,
           ),
           const CustomSocialMediaButton(
@@ -64,7 +64,7 @@ class _FullSizedFooter extends StatelessWidget {
           ),
           const CustomSocialMediaButton(
             icon: MdiIcons.facebook,
-            url: 'https://www.facebook.com/profile.php?id=100072001248682',
+            url: 'https://www.facebook.com/muritec',
             marginLeft: 40,
           ),
         ],

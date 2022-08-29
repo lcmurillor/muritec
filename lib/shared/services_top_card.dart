@@ -24,7 +24,8 @@ class ServicesTopCard extends StatefulWidget {
 class _ServicesTopCardState extends State<ServicesTopCard> {
   @override
   Widget build(BuildContext context) {
-    ScrollProvider controller = Provider.of<ScrollProvider>(context);
+    ScrollProvider controller =
+        Provider.of<ScrollProvider>(context, listen: false);
     double width = MediaQuery.of(context).size.width;
     return Container(
       margin: EdgeInsets.symmetric(vertical: 70, horizontal: width * 0.03),

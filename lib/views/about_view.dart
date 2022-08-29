@@ -24,7 +24,8 @@ class _AboutViewState extends State<AboutView> {
   double offset = 0;
   @override
   Widget build(BuildContext context) {
-    ScrollProvider controller = Provider.of<ScrollProvider>(context);
+    ScrollProvider controller =
+        Provider.of<ScrollProvider>(context, listen: false);
     return NotificationListener(
       onNotification: updateOffsett,
       child: SizedBox(
@@ -78,6 +79,7 @@ class _AboutViewState extends State<AboutView> {
           ///según la dimención de la pantalla.
           SingleChildScrollView(
             controller: controller.controller,
+            physics: const BouncingScrollPhysics(),
             child: Column(
               children: [
                 ///Construcción del banner a tamaño completo horizontal.
