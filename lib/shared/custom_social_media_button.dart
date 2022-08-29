@@ -1,7 +1,5 @@
-// ignore_for_file: file_names
-
 import 'package:flutter/Material.dart';
-import 'package:url_launcher/url_launcher.dart';
+import 'package:url_launcher/url_launcher_string.dart';
 
 class CustomSocialMediaButton extends StatelessWidget {
   ///Este widget es un botón que muestra un icono el cual se puede enviar por paramentros
@@ -22,7 +20,7 @@ class CustomSocialMediaButton extends StatelessWidget {
     return Container(
       margin: EdgeInsets.only(left: marginLeft),
       child: IconButton(
-        onPressed: () => launch(url),
+        onPressed: () => launchUrlString(url),
         icon: Icon(
           icon,
           color: Colors.white,

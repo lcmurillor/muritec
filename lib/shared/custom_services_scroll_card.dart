@@ -5,11 +5,11 @@ import 'package:flutter/Material.dart';
 import 'package:flutter/gestures.dart';
 
 class CustomServicesScrollCard extends StatelessWidget {
-  ///Esta es una lista horizontal de lementos que se dispone en larte superior de la página
+  ///Esta es una lista horizontal de lementos que se dispone en la parte superior de la página
   ///Toma en cuenta las considereaciones del tamaño horizontal para ajustar el contendio  en relación
   ///a la pantalla. Como estamos hablando de un elementos de scroll lateral, en dimesiones vertiales
-  ///solo ajusta el tamaño del car para que sea mas comodo y se disminuye la cantidad de card
-  ///que se pueden ver en pantalla-
+  ///solo ajusta el tamaño del card para que sea más comodo y se disminuye la cantidad de card
+  ///que se pueden ver en pantalla.
   const CustomServicesScrollCard({
     Key? key,
     required this.widget,
@@ -19,7 +19,6 @@ class CustomServicesScrollCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    ScrollController scrollcontroller = ScrollController();
     return Container(
       width: double.infinity,
       height: 500,
@@ -33,7 +32,7 @@ class CustomServicesScrollCard extends StatelessWidget {
           PointerDeviceKind.mouse,
         }),
 
-        ///Construye una lista de elementos de maera reterativa, a los que se les manda valores especificos
+        ///Construye una lista de elementos de manera reiterativa, a los que se les manda valores especificos
         ///a cada uno de las costrucciones.
         child: ListView.builder(
           padding: EdgeInsets.symmetric(
@@ -43,23 +42,26 @@ class CustomServicesScrollCard extends StatelessWidget {
           scrollDirection: Axis.horizontal,
           itemBuilder: (_, index) {
             if (index == 0) {
-              return const ServicesTopCard(
+              return ServicesTopCard(
                   path: 'assets/pc.svg',
                   text:
                       'Mantenimiento preventivo y correctivo de equipos informáticos como computadoras portátiles, de escritorio e impresoras.',
-                  title: 'Computación');
+                  title: 'Computación',
+                  position: (widget.width > 500) ? 2000 : 1600);
             } else if (index == 1) {
-              return const ServicesTopCard(
+              return ServicesTopCard(
                   path: 'assets/red.svg',
                   text:
                       'Cotización, venta e instalación de equipos de red para entornos domésticos.',
-                  title: 'Redes');
+                  title: 'Redes',
+                  position: (widget.width > 500) ? 2500 : 2200);
             }
             return const ServicesTopCard(
                 path: 'assets/code.svg',
                 text:
                     'Desarrollo de aplicaciones multiplataforma a media, implantando las tecnologías más populares y solicitas del mercado actual.',
-                title: 'programación');
+                title: 'programación',
+                position: 2000);
           },
         ),
       ),

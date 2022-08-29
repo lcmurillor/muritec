@@ -1,4 +1,5 @@
 import 'package:app_muritec/providers/menu_provider.dart';
+import 'package:app_muritec/providers/scroll_provider.dart';
 import 'package:app_muritec/shared/sheards.dart';
 import 'package:app_muritec/theme/theme.dart';
 import 'package:flutter/Material.dart';
@@ -23,7 +24,7 @@ class _AboutViewState extends State<AboutView> {
   double offset = 0;
   @override
   Widget build(BuildContext context) {
-    ScrollController scrollController = ScrollController();
+    ScrollProvider controller = Provider.of<ScrollProvider>(context);
     return NotificationListener(
       onNotification: updateOffsett,
       child: SizedBox(
@@ -60,7 +61,7 @@ class _AboutViewState extends State<AboutView> {
             ),
           ),
 
-          ///Define la posición de la segunbda imagen con el efecto paralax.
+          ///Define la posición de la segunda imagen con el efecto paralax.
           Positioned(
               top: (widget.width > 650)
                   ? (offset * -0.85) + 1300
@@ -76,7 +77,7 @@ class _AboutViewState extends State<AboutView> {
           ///Contiene una condición que indica con que widget va a construir el banner
           ///según la dimención de la pantalla.
           SingleChildScrollView(
-            controller: scrollController,
+            controller: controller.controller,
             child: Column(
               children: [
                 ///Construcción del banner a tamaño completo horizontal.
@@ -110,7 +111,6 @@ class _AboutViewState extends State<AboutView> {
   ///de scroll es vertical unicamente.
   bool updateOffsett(ScrollNotification scrollNotification) {
     if (scrollNotification.metrics.axis == Axis.vertical) {
-      print(scrollNotification.metrics.pixels);
       setState(() => offset = scrollNotification.metrics.pixels);
       return true;
     }

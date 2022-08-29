@@ -7,10 +7,13 @@ class CustomServicesContainer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    double width = MediaQuery.of(context).size.width;
     return Container(
       width: double.infinity,
       color: MainTheme.graySoft,
-      padding: MainTheme.mainPadding,
+      padding: (width > 650)
+          ? MainTheme.mainPadding
+          : const EdgeInsets.symmetric(horizontal: 40),
       child: Column(
         children: const [
           ServicesBottomCard(

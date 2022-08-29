@@ -1,3 +1,4 @@
+import 'package:app_muritec/providers/scroll_provider.dart';
 import 'package:app_muritec/theme/theme.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutter/Material.dart';
@@ -5,11 +6,16 @@ import 'package:google_fonts/google_fonts.dart';
 
 class ServicesTopCard extends StatefulWidget {
   const ServicesTopCard(
-      {Key? key, required this.path, required this.title, required this.text})
+      {Key? key,
+      required this.path,
+      required this.title,
+      required this.text,
+      required this.position})
       : super(key: key);
   final String path;
   final String title;
   final String text;
+  final double position;
 
   @override
   State<ServicesTopCard> createState() => _ServicesTopCardState();
@@ -18,7 +24,7 @@ class ServicesTopCard extends StatefulWidget {
 class _ServicesTopCardState extends State<ServicesTopCard> {
   @override
   Widget build(BuildContext context) {
-    ScrollController scrollcontroller = ScrollController();
+    ScrollProvider controller = Provider.of<ScrollProvider>(context);
     double width = MediaQuery.of(context).size.width;
     return Container(
       margin: EdgeInsets.symmetric(vertical: 70, horizontal: width * 0.03),
@@ -55,7 +61,7 @@ class _ServicesTopCardState extends State<ServicesTopCard> {
                   fontSize: 30)),
         ),
         /**
-         * Texfo del Card
+         * Texto del Card
          */
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: 20),
@@ -72,8 +78,8 @@ class _ServicesTopCardState extends State<ServicesTopCard> {
         TextButton(
           onPressed: () {
             setState(() {
-              scrollcontroller.animateTo(1200,
-                  duration: const Duration(milliseconds: 200),
+              controller.controller.animateTo(widget.position,
+                  duration: const Duration(milliseconds: 400),
                   curve: Curves.easeInOut);
             });
           },
