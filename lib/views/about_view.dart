@@ -23,6 +23,7 @@ class _AboutViewState extends State<AboutView> {
   double offset = 0;
   @override
   Widget build(BuildContext context) {
+    ScrollController scrollController = ScrollController();
     return NotificationListener(
       onNotification: updateOffsett,
       child: SizedBox(
@@ -31,19 +32,17 @@ class _AboutViewState extends State<AboutView> {
             ? widget.height - 140
             : widget.height - widget.menu.getmenuSize(),
         child: Stack(children: [
-          /**
-           * Define la posicion de la imagen con el efecto paralax
-           */
+          ///Define la posición de la imagen princial con el efecto paralax.
           Positioned(
               top: offset * -0.25,
               child: Image.asset('assets/img1.jpg',
                   height: widget.height * 0.40,
                   width: widget.width,
                   fit: BoxFit.cover)),
-          /**
-           * Este contnedor es el espacio que se encuentra sobre la imagen
-           * que esta posisionada atras, ademas da el efecto de transparencia
-           */
+
+          ///Este contenedor es el espacio que se encuentra sobre la imagen
+          ///que esta posisionada atras, además da el efecto de transparencia con
+          //un degradado azul para que sea mas fácil leer el texto.
           Positioned(
             top: offset * -0.25,
             child: Container(
@@ -60,9 +59,8 @@ class _AboutViewState extends State<AboutView> {
               ),
             ),
           ),
-          /**
-           * Define la posicion de la imagen con el efecto paralax
-           */
+
+          ///Define la posición de la segunbda imagen con el efecto paralax.
           Positioned(
               top: (widget.width > 650)
                   ? (offset * -0.85) + 1300
@@ -71,37 +69,33 @@ class _AboutViewState extends State<AboutView> {
                   height: widget.height,
                   width: widget.width,
                   fit: BoxFit.cover)),
-          /**
-           * Contenedor donde se gestiona el resto del contendio
-           * que se puede ver de la pagina y que sobre pasa la imagen
-           */
+
+          ///Contiene todos los elementos dentro del apartado "acerca de nosotros".
+          ///La página procipal, y permite realizar un novimiento vertical "scroll"
+          ///para ver todo el contenido.
+          ///Contiene una condición que indica con que widget va a construir el banner
+          ///según la dimención de la pantalla.
           SingleChildScrollView(
+            controller: scrollController,
             child: Column(
               children: [
+                ///Construcción del banner a tamaño completo horizontal.
                 if (widget.width > 740) ...[
-                  /**
-                 * Contenedor que contruye en su totalalidad el banner superior en tamaño completo
-                 */
                   _FullSizedBanner(widget: widget)
+
+                  ///Construcción del banner a tamaño vertial y para moviles.
                 ] else ...[
-                  /**
-                 * Contenedor que contruye en su totalalidad el banne superior en tamaño reducido
-                 */
                   _MediumSizedBanner(widget: widget)
                 ],
-                /**
-                 * Todo el contendio despues de la imagnes
-                 */
+
+                ///Todo el resto del contenido vá acá.
                 CustomServicesScrollCard(widget: widget),
                 const CustomInfoContainer(),
                 Container(
                   height: 300,
                 ),
-                Container(
-                  height: 600,
-                  width: double.infinity,
-                  color: Colors.amber,
-                ),
+                const CustomServicesContainer(),
+
                 const CustomAppFooter()
               ],
             ),
@@ -111,9 +105,12 @@ class _AboutViewState extends State<AboutView> {
     );
   }
 
+  ///Es llamado cada vez que se realiza un cambio en los valores de posicionamiento
+  ///del sroll "offset" asigna un nuevo valor a la variable local offSet si el movimiento
+  ///de scroll es vertical unicamente.
   bool updateOffsett(ScrollNotification scrollNotification) {
     if (scrollNotification.metrics.axis == Axis.vertical) {
-      //print(scrollNotification.metrics.pixels);
+      print(scrollNotification.metrics.pixels);
       setState(() => offset = scrollNotification.metrics.pixels);
       return true;
     }
@@ -122,6 +119,8 @@ class _AboutViewState extends State<AboutView> {
 }
 
 class _MediumSizedBanner extends StatelessWidget {
+  ///Este widget construye el banner superior en las dimenciones reducidadd, donde
+  ///la dimención horizontal es menor o igual a la dimneción vertial.
   const _MediumSizedBanner({
     Key? key,
     required this.widget,
@@ -132,12 +131,14 @@ class _MediumSizedBanner extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      //padding: const EdgeInsets.symmetric(horizontal: 100),
       height: widget.height * 0.35,
       child: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
+        ///Llamado al titulo y sub tíutlo del banner principal.
         CustomBannerTitle(
             width: widget.width, widthTextValue: 0.7, widthTitleValue: 0.10),
         const SizedBox(height: 10),
+
+        ///LLamado al botón lateral que redirije a la pagina de contáctanos.
         CustomBannerButton(
           widget: widget,
           height: 0.10,
@@ -149,6 +150,9 @@ class _MediumSizedBanner extends StatelessWidget {
 }
 
 class _FullSizedBanner extends StatelessWidget {
+  ///Este widget construye y asigna los valores requeridos para posicionar los
+  ///elementos de banner principal cuando la página está en formato horizontal.
+  ///Hace un llamado a los widgets personalizados que corresponden la título y el botón.
   const _FullSizedBanner({
     Key? key,
     required this.widget,
@@ -162,8 +166,11 @@ class _FullSizedBanner extends StatelessWidget {
       padding: const EdgeInsets.symmetric(horizontal: 100),
       height: widget.height * 0.40,
       child: Row(mainAxisAlignment: MainAxisAlignment.spaceAround, children: [
+        ///Llamado al titulo y sub tíutlo del banner principal.
         CustomBannerTitle(
             width: widget.width, widthTextValue: 0.6, widthTitleValue: 0.05),
+
+        ///LLamado al botón lateral que redirije a la pagina de contáctanos.
         CustomBannerButton(
           widget: widget,
           height: 0.10,

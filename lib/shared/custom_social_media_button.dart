@@ -4,6 +4,8 @@ import 'package:flutter/Material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class CustomSocialMediaButton extends StatelessWidget {
+  ///Este widget es un botón que muestra un icono el cual se puede enviar por paramentros
+  ///además estos botón esperan una URL para redirigir al usario a esa dirección.
   const CustomSocialMediaButton(
       {Key? key,
       required this.icon,

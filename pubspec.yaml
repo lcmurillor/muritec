@@ -32,11 +32,12 @@ dependencies:
   fluro: ^2.0.3
   flutter:
     sdk: flutter
-  flutter_svg: ^1.0.3
-  google_fonts: ^2.3.1
-  material_design_icons_flutter: ^5.0.6595
-  provider: ^6.0.2
-  url_launcher: ^6.0.20
+  flutter_svg: ^1.1.4
+  google_fonts: ^3.0.1
+  material_design_icons_flutter: ^5.0.6996
+  provider: ^6.0.3
+  simple_gradient_text: ^1.2.3
+  url_launcher: ^6.1.5
 
 dev_dependencies:
   flutter_lints: ^1.0.0

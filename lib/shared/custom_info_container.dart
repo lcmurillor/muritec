@@ -22,7 +22,7 @@ class CustomInfoContainer extends StatelessWidget {
           children: [
             Container(
                 margin: EdgeInsets.symmetric(vertical: (width > 650) ? 40 : 20),
-                child: const _FullSizedContainer(
+                child: const CustomContainer(
                   path: 'assets/target.svg',
                   title: 'Misión',
                   text:
@@ -30,7 +30,7 @@ class CustomInfoContainer extends StatelessWidget {
                 )),
             Container(
                 margin: EdgeInsets.symmetric(vertical: (width > 650) ? 40 : 20),
-                child: const _FullSizedContainer(
+                child: const CustomContainer(
                   path: 'assets/idea.svg',
                   title: 'Visión',
                   text:
@@ -38,7 +38,7 @@ class CustomInfoContainer extends StatelessWidget {
                 )),
             Container(
                 margin: EdgeInsets.symmetric(vertical: (width > 650) ? 40 : 20),
-                child: const _FullSizedContainer(
+                child: const CustomContainer(
                   path: 'assets/love.svg',
                   title: 'Valores',
                   text:
@@ -49,8 +49,8 @@ class CustomInfoContainer extends StatelessWidget {
   }
 }
 
-class _FullSizedContainer extends StatelessWidget {
-  const _FullSizedContainer(
+class CustomContainer extends StatelessWidget {
+  const CustomContainer(
       {Key? key, required this.text, required this.title, required this.path})
       : super(key: key);
   final String text;

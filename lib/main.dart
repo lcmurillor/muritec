@@ -1,4 +1,5 @@
 import 'package:app_muritec/providers/menu_provider.dart';
+import 'package:app_muritec/providers/scroll_provider.dart';
 import 'package:app_muritec/router/router.dart';
 import 'package:app_muritec/theme/theme.dart';
 import 'package:flutter/material.dart';
@@ -11,7 +12,10 @@ class AppState extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MultiProvider(
-      providers: [ChangeNotifierProvider(create: (_) => MenuProvider())],
+      providers: [
+        ChangeNotifierProvider(create: (_) => MenuProvider()),
+        ChangeNotifierProvider(create: (_) => ScrollProvider())
+      ],
       child: const MyApp(),
     );
   }

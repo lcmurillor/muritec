@@ -3,7 +3,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutter/Material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class ServicesTopCard extends StatelessWidget {
+class ServicesTopCard extends StatefulWidget {
   const ServicesTopCard(
       {Key? key, required this.path, required this.title, required this.text})
       : super(key: key);
@@ -12,7 +12,13 @@ class ServicesTopCard extends StatelessWidget {
   final String text;
 
   @override
+  State<ServicesTopCard> createState() => _ServicesTopCardState();
+}
+
+class _ServicesTopCardState extends State<ServicesTopCard> {
+  @override
   Widget build(BuildContext context) {
+    ScrollController scrollcontroller = ScrollController();
     double width = MediaQuery.of(context).size.width;
     return Container(
       margin: EdgeInsets.symmetric(vertical: 70, horizontal: width * 0.03),
@@ -35,20 +41,14 @@ class ServicesTopCard extends StatelessWidget {
             padding: const EdgeInsets.symmetric(vertical: 30, horizontal: 30),
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(100),
-              // boxShadow: [
-              //   BoxShadow(
-              //       color: MainTheme.shadowBlue,
-              //       offset: const Offset(0, 0),
-              //       blurRadius: 40)
-              // ],
             ),
-            child: SvgPicture.asset(path)),
+            child: SvgPicture.asset(widget.path)),
         /**
          * Titulo proncial del Card
          */
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: 20),
-          child: Text(title,
+          child: Text(widget.title,
               style: GoogleFonts.poppins(
                   color: MainTheme.darkBlue,
                   fontWeight: FontWeight.w500,
@@ -59,7 +59,7 @@ class ServicesTopCard extends StatelessWidget {
          */
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: 20),
-          child: Text(text,
+          child: Text(widget.text,
               style: GoogleFonts.lato(
                   color: Colors.black,
                   fontWeight: FontWeight.w500,
@@ -70,7 +70,13 @@ class ServicesTopCard extends StatelessWidget {
          */
         const Spacer(),
         TextButton(
-          onPressed: () {},
+          onPressed: () {
+            setState(() {
+              scrollcontroller.animateTo(1200,
+                  duration: const Duration(milliseconds: 200),
+                  curve: Curves.easeInOut);
+            });
+          },
           style: ButtonStyle(
             overlayColor: MaterialStateProperty.all<Color>(Colors.transparent),
           ),
