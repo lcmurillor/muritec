@@ -1,6 +1,7 @@
 import 'package:app_muritec/providers/menu_provider.dart';
 import 'package:app_muritec/providers/scroll_provider.dart';
 import 'package:app_muritec/router/router.dart';
+import 'package:app_muritec/services/navigation_service.dart';
 import 'package:app_muritec/theme/theme.dart';
 import 'package:flutter/material.dart';
 
@@ -42,6 +43,7 @@ class _MyAppState extends State<MyApp> {
       title: 'MuriTEC',
       initialRoute: '/',
       onGenerateRoute: Flurorouter.router.generator,
+      navigatorKey: NavigationService.navigatorKey,
       theme: MainTheme.lightTheme,
     );
   }

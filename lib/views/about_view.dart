@@ -5,16 +5,7 @@ import 'package:app_muritec/theme/theme.dart';
 import 'package:flutter/Material.dart';
 
 class AboutView extends StatefulWidget {
-  const AboutView({
-    Key? key,
-    required this.width,
-    required this.height,
-    required this.menu,
-  }) : super(key: key);
-
-  final double width;
-  final double height;
-  final MenuProvider menu;
+  const AboutView({Key? key}) : super(key: key);
 
   @override
   State<AboutView> createState() => _AboutViewState();
@@ -24,23 +15,22 @@ class _AboutViewState extends State<AboutView> {
   double offset = 0;
   @override
   Widget build(BuildContext context) {
+    final height = MediaQuery.of(context).size.height;
+    final width = MediaQuery.of(context).size.width;
+    MenuProvider menu = Provider.of<MenuProvider>(context);
     ScrollProvider controller =
         Provider.of<ScrollProvider>(context, listen: false);
     return NotificationListener(
       onNotification: updateOffsett,
       child: SizedBox(
-        width: widget.width,
-        height: (widget.width > 910)
-            ? widget.height - 140
-            : widget.height - widget.menu.getmenuSize(),
+        width: width,
+        height: (width > 910) ? height - 140 : height - menu.getmenuSize(),
         child: Stack(children: [
           ///Define la posición de la imagen princial con el efecto paralax.
           Positioned(
               top: offset * -0.25,
               child: Image.asset('assets/img1.jpg',
-                  height: widget.height * 0.40,
-                  width: widget.width,
-                  fit: BoxFit.cover)),
+                  height: height * 0.40, width: width, fit: BoxFit.cover)),
 
           ///Este contenedor es el espacio que se encuentra sobre la imagen
           ///que esta posisionada atras, además da el efecto de transparencia con
@@ -48,8 +38,8 @@ class _AboutViewState extends State<AboutView> {
           Positioned(
             top: offset * -0.25,
             child: Container(
-              height: widget.height * 0.40,
-              width: widget.width,
+              height: height * 0.40,
+              width: width,
               decoration: BoxDecoration(
                 gradient: LinearGradient(colors: [
                   MainTheme.darkBlue.withOpacity(0.5),
@@ -64,13 +54,11 @@ class _AboutViewState extends State<AboutView> {
 
           ///Define la posición de la segunda imagen con el efecto paralax.
           Positioned(
-              top: (widget.width > 650)
+              top: (width > 650)
                   ? (offset * -0.85) + 1300
                   : (offset * -0.85) + 1000,
               child: Image.asset('assets/img2.jpg',
-                  height: widget.height,
-                  width: widget.width,
-                  fit: BoxFit.cover)),
+                  height: height, width: width, fit: BoxFit.cover)),
 
           ///Contiene todos los elementos dentro del apartado "acerca de nosotros".
           ///La página procipal, y permite realizar un novimiento vertical "scroll"
@@ -83,16 +71,16 @@ class _AboutViewState extends State<AboutView> {
             child: Column(
               children: [
                 ///Construcción del banner a tamaño completo horizontal.
-                if (widget.width > 740) ...[
-                  _FullSizedBanner(widget: widget)
+                if (width > 740) ...[
+                  const _FullSizedBanner()
 
                   ///Construcción del banner a tamaño vertial y para moviles.
                 ] else ...[
-                  _MediumSizedBanner(widget: widget)
+                  const _MediumSizedBanner()
                 ],
 
                 ///Todo el resto del contenido vá acá.
-                CustomServicesScrollCard(widget: widget),
+                const CustomServicesScrollCard(),
                 const CustomInfoContainer(),
                 Container(
                   height: 300,
@@ -123,26 +111,22 @@ class _AboutViewState extends State<AboutView> {
 class _MediumSizedBanner extends StatelessWidget {
   ///Este widget construye el banner superior en las dimenciones reducidadd, donde
   ///la dimención horizontal es menor o igual a la dimneción vertial.
-  const _MediumSizedBanner({
-    Key? key,
-    required this.widget,
-  }) : super(key: key);
-
-  final AboutView widget;
+  const _MediumSizedBanner({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    final height = MediaQuery.of(context).size.height;
+    final width = MediaQuery.of(context).size.width;
     return SizedBox(
-      height: widget.height * 0.35,
+      height: height * 0.35,
       child: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
         ///Llamado al titulo y sub tíutlo del banner principal.
         CustomBannerTitle(
-            width: widget.width, widthTextValue: 0.7, widthTitleValue: 0.10),
+            width: width, widthTextValue: 0.7, widthTitleValue: 0.10),
         const SizedBox(height: 10),
 
         ///LLamado al botón lateral que redirije a la pagina de contáctanos.
-        CustomBannerButton(
-          widget: widget,
+        const CustomBannerButton(
           height: 0.10,
           width: 0.50,
         )
@@ -155,26 +139,22 @@ class _FullSizedBanner extends StatelessWidget {
   ///Este widget construye y asigna los valores requeridos para posicionar los
   ///elementos de banner principal cuando la página está en formato horizontal.
   ///Hace un llamado a los widgets personalizados que corresponden la título y el botón.
-  const _FullSizedBanner({
-    Key? key,
-    required this.widget,
-  }) : super(key: key);
-
-  final AboutView widget;
+  const _FullSizedBanner({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    final height = MediaQuery.of(context).size.height;
+    final width = MediaQuery.of(context).size.width;
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 100),
-      height: widget.height * 0.40,
+      height: height * 0.40,
       child: Row(mainAxisAlignment: MainAxisAlignment.spaceAround, children: [
         ///Llamado al titulo y sub tíutlo del banner principal.
         CustomBannerTitle(
-            width: widget.width, widthTextValue: 0.6, widthTitleValue: 0.05),
+            width: width, widthTextValue: 0.6, widthTitleValue: 0.05),
 
         ///LLamado al botón lateral que redirije a la pagina de contáctanos.
-        CustomBannerButton(
-          widget: widget,
+        const CustomBannerButton(
           height: 0.10,
           width: 0.20,
         )

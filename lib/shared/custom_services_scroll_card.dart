@@ -1,6 +1,5 @@
 import 'package:app_muritec/shared/sheards.dart';
 import 'package:app_muritec/theme/theme.dart';
-import 'package:app_muritec/views/views.dart';
 import 'package:flutter/Material.dart';
 import 'package:flutter/gestures.dart';
 
@@ -10,15 +9,11 @@ class CustomServicesScrollCard extends StatelessWidget {
   ///a la pantalla. Como estamos hablando de un elementos de scroll lateral, en dimesiones vertiales
   ///solo ajusta el tamaño del card para que sea más comodo y se disminuye la cantidad de card
   ///que se pueden ver en pantalla.
-  const CustomServicesScrollCard({
-    Key? key,
-    required this.widget,
-  }) : super(key: key);
-
-  final AboutView widget;
+  const CustomServicesScrollCard({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    final width = MediaQuery.of(context).size.width;
     return Container(
       width: double.infinity,
       height: 500,
@@ -36,7 +31,7 @@ class CustomServicesScrollCard extends StatelessWidget {
         ///a cada uno de las costrucciones.
         child: ListView.builder(
           padding: EdgeInsets.symmetric(
-              horizontal: (widget.width > 400) ? widget.width * 0.10 : 0),
+              horizontal: (width > 400) ? width * 0.10 : 0),
           physics: const BouncingScrollPhysics(),
           itemCount: 3,
           scrollDirection: Axis.horizontal,
@@ -47,24 +42,38 @@ class CustomServicesScrollCard extends StatelessWidget {
                   text:
                       'Mantenimiento preventivo y correctivo de equipos informáticos como computadoras portátiles, de escritorio e impresoras.',
                   title: 'Computación',
-                  position: (widget.width > 500) ? 2000 : 1600);
+                  position: getPosition(width));
             } else if (index == 1) {
               return ServicesTopCard(
                   path: 'assets/red.svg',
                   text:
                       'Cotización, venta e instalación de equipos de red para entornos domésticos.',
                   title: 'Redes',
-                  position: (widget.width > 500) ? 2500 : 2200);
+                  position: getPosition(width) + 500);
             }
-            return const ServicesTopCard(
+            return ServicesTopCard(
                 path: 'assets/code.svg',
                 text:
                     'Desarrollo de aplicaciones multiplataforma a media, implantando las tecnologías más populares y solicitas del mercado actual.',
-                title: 'programación',
-                position: 2000);
+                title: 'Programación',
+                position: getPosition(width) + 900);
           },
         ),
       ),
     );
+  }
+
+  double getPosition(double width) {
+    double value = 0;
+    if (width > 1200) {
+      value = 1900;
+    } else if (width > 800) {
+      value = 2000;
+    } else if (width > 600) {
+      value = 2100;
+    } else {
+      value = 1700;
+    }
+    return value;
   }
 }

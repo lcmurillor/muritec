@@ -1,6 +1,8 @@
 // ignore_for_file: file_names
 
 import 'package:app_muritec/providers/menu_provider.dart';
+import 'package:app_muritec/router/router.dart';
+import 'package:app_muritec/services/navigation_service.dart';
 import 'package:app_muritec/shared/sheards.dart';
 import 'package:app_muritec/theme/theme.dart';
 import 'package:flutter/material.dart';
@@ -54,19 +56,22 @@ class _FullSizedMenu extends StatelessWidget {
               children: [
                 CustomMenuButton(
                   text: 'Acerca de nosotros',
-                  onPressed: () {},
+                  onPressed: () =>
+                      NavigationService.replaceTo(Flurorouter.rootRoute),
                   marginLeft: 40,
                   delay: 40,
                 ),
                 CustomMenuButton(
                   text: 'Experiencia',
-                  onPressed: () {},
+                  onPressed: () =>
+                      NavigationService.replaceTo(Flurorouter.experienceRoute),
                   marginLeft: 40,
                   delay: 80,
                 ),
                 CustomMenuButton(
                   text: 'Contáctanos',
-                  onPressed: () {},
+                  onPressed: () =>
+                      NavigationService.replaceTo(Flurorouter.contactusRoute),
                   marginLeft: 40,
                   delay: 120,
                 ),
@@ -109,21 +114,30 @@ class _MediumSizedMenuState extends State<_MediumSizedMenu> {
             const SizedBox(height: 15),
             CustomMenuButton(
               text: 'Acerca de nosotros',
-              onPressed: () {},
+              onPressed: () {
+                NavigationService.replaceTo(Flurorouter.rootRoute);
+                widget.menu.setMediumSize();
+              },
               marginLeft: 0,
               marginVertical: 2,
               delay: 40,
             ),
             CustomMenuButton(
               text: 'Experiencia',
-              onPressed: () {},
+              onPressed: () {
+                NavigationService.replaceTo(Flurorouter.experienceRoute);
+                widget.menu.setMediumSize();
+              },
               marginLeft: 0,
               marginVertical: 2,
               delay: 80,
             ),
             CustomMenuButton(
               text: 'Contáctanos',
-              onPressed: () {},
+              onPressed: () {
+                NavigationService.replaceTo(Flurorouter.contactusRoute);
+                widget.menu.setMediumSize();
+              },
               marginLeft: 0,
               marginVertical: 2,
               delay: 120,
