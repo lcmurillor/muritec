@@ -37511,7 +37511,7 @@ A.D5.prototype={
 J(a,b){var s=null
 return A.bV(s,s,s,s,s,s,s,s)}}
 A.E2.prototype={
-J(a,b){var s,r,q,p,o,n=null,m="/experience/PC_Escritorio3.jpg",l="/experience/Hardware1.jpeg",k="/experience/PC_Portatil10.jpg",j="/experience/PC_Portatil4.jpg",i="/experience/PC_Portatil9.jpg",h=b.T(t.w).f.a,g=A.GE(b,!0,t.QU),f=h.a,e=h.b
+J(a,b){var s,r,q,p,o,n=null,m="assets/experience/PC_Escritorio3.jpg",l="assets/experience/Hardware1.jpeg",k="assets/experience/PC_Portatil10.jpg",j="assets/experience/PC_Portatil4.jpg",i="assets/experience/PC_Portatil9.jpg",h=b.T(t.w).f.a,g=A.GE(b,!0,t.QU),f=h.a,e=h.b
 e=f>910?e-140:e-g.a
 s=A.j7(10)
 r=f>900?100:30

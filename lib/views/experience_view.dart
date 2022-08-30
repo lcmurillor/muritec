@@ -35,7 +35,7 @@ class ExperienceView extends StatelessWidget {
                               children: [
                                 _Image(
                                   size: size,
-                                  path: '/experience/PC_Escritorio3.jpg',
+                                  path: 'assets/experience/PC_Escritorio3.jpg',
                                   isRadius: const BorderRadius.only(
                                       topLeft: Radius.circular(10)),
                                 ),
@@ -56,7 +56,7 @@ class ExperienceView extends StatelessWidget {
                                 ),
                                 _Image(
                                   size: size,
-                                  path: '/experience/Hardware1.jpeg',
+                                  path: 'assets/experience/Hardware1.jpeg',
                                 ),
                               ],
                             ),
@@ -65,7 +65,8 @@ class ExperienceView extends StatelessWidget {
                               children: [
                                 _Image(
                                     size: size,
-                                    path: '/experience/PC_Portatil10.jpg'),
+                                    path:
+                                        'assets/experience/PC_Portatil10.jpg'),
                                 const _Description(
                                   title: 'Mantenimiento de Software',
                                   text:
@@ -83,7 +84,7 @@ class ExperienceView extends StatelessWidget {
                                 ),
                                 _Image(
                                   size: size,
-                                  path: '/experience/PC_Portatil4.jpg',
+                                  path: 'assets/experience/PC_Portatil4.jpg',
                                 ),
                               ],
                             ),
@@ -92,7 +93,7 @@ class ExperienceView extends StatelessWidget {
                               children: [
                                 _Image(
                                   size: size,
-                                  path: '/experience/PC_Portatil9.jpg',
+                                  path: 'assets/experience/PC_Portatil9.jpg',
                                   isRadius: const BorderRadius.only(
                                       bottomLeft: Radius.circular(10)),
                                 ),
@@ -120,7 +121,8 @@ class ExperienceView extends StatelessWidget {
                               children: [
                                 _Image(
                                     size: size,
-                                    path: '/experience/PC_Escritorio3.jpg'),
+                                    path:
+                                        'assets/experience/PC_Escritorio3.jpg'),
                                 Expanded(
                                   child: Padding(
                                     padding: const EdgeInsets.all(15),
@@ -160,7 +162,7 @@ class ExperienceView extends StatelessWidget {
                                 ),
                                 _Image(
                                     size: size,
-                                    path: '/experience/Hardware1.jpeg'),
+                                    path: 'assets/experience/Hardware1.jpeg'),
                               ],
                             ),
                             Padding(
@@ -176,7 +178,8 @@ class ExperienceView extends StatelessWidget {
                               children: [
                                 _Image(
                                     size: size,
-                                    path: '/experience/PC_Portatil10.jpg'),
+                                    path:
+                                        'assets/experience/PC_Portatil10.jpg'),
                                 Expanded(
                                   child: Padding(
                                     padding: const EdgeInsets.all(15),
@@ -216,7 +219,7 @@ class ExperienceView extends StatelessWidget {
                                 ),
                                 _Image(
                                     size: size,
-                                    path: '/experience/PC_Portatil4.jpg'),
+                                    path: 'assets/experience/PC_Portatil4.jpg'),
                               ],
                             ),
                             Padding(
@@ -232,7 +235,7 @@ class ExperienceView extends StatelessWidget {
                               children: [
                                 _Image(
                                     size: size,
-                                    path: '/experience/PC_Portatil9.jpg',
+                                    path: 'assets/experience/PC_Portatil9.jpg',
                                     isRadius: const BorderRadius.only(
                                         bottomLeft: Radius.circular(10))),
                                 Expanded(
