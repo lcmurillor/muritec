@@ -28,6 +28,7 @@ environment:
 # versions available, run `flutter pub outdated`.
 dependencies:
   animate_do: ^2.1.0
+  card_swiper: ^2.0.4
   cupertino_icons: ^1.0.2
   fluro: ^2.0.3
   flutter:

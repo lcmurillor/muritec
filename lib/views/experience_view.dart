@@ -1,6 +1,9 @@
+import 'dart:math';
+
 import 'package:app_muritec/providers/menu_provider.dart';
 import 'package:app_muritec/shared/sheards.dart';
 import 'package:app_muritec/theme/theme.dart';
+import 'package:card_swiper/card_swiper.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -11,6 +14,33 @@ class ExperienceView extends StatelessWidget {
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
     MenuProvider menu = Provider.of<MenuProvider>(context);
+
+    final List<String> path1 = [
+      'assets/PC_Escritorio3.jpg',
+      'assets/Equipo_DVR.jpg',
+      'assets/PC_Portatil9.jpg'
+    ];
+    final List<String> path2 = [
+      'assets/Hardware1.jpeg',
+      'assets/Hardware2.jpeg',
+      'assets/Hardware3.jpeg'
+    ];
+    final List<String> path3 = [
+      'assets/PC_Portatil10.jpg',
+      'assets/PC_Portatil3.jpg',
+      'assets/PC_Bios1.jpg'
+    ];
+    final List<String> path4 = [
+      'assets/PC_Portatil8.jpg',
+      'assets/PC_Portatil20.jpg',
+      'assets/PC_Portatil19.jpg'
+    ];
+    final List<String> path5 = [
+      'assets/PC_Caddy1.jpg',
+      'assets/PC_Caddy2.jpg',
+      'assets/PC_Portatil7.jpg'
+    ];
+
     return SizedBox(
       width: size.width,
       height: (size.width > 910)
@@ -34,7 +64,7 @@ class ExperienceView extends StatelessWidget {
                           children: [
                             _Image(
                               size: size,
-                              path: 'assets/PC_Escritorio3.jpg',
+                              path: path1,
                               isRadius: const BorderRadius.only(
                                   topLeft: Radius.circular(10)),
                             ),
@@ -55,15 +85,14 @@ class ExperienceView extends StatelessWidget {
                             ),
                             _Image(
                               size: size,
-                              path: 'assets/Hardware1.jpeg',
+                              path: path2,
                             ),
                           ],
                         ),
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                            _Image(
-                                size: size, path: 'assets/PC_Portatil10.jpg'),
+                            _Image(size: size, path: path3),
                             const _Description(
                               title: 'Mantenimiento de Software',
                               text:
@@ -81,7 +110,7 @@ class ExperienceView extends StatelessWidget {
                             ),
                             _Image(
                               size: size,
-                              path: 'assets/PC_Portatil4.jpg',
+                              path: path4,
                             ),
                           ],
                         ),
@@ -90,7 +119,7 @@ class ExperienceView extends StatelessWidget {
                           children: [
                             _Image(
                               size: size,
-                              path: 'assets/PC_Portatil9.jpg',
+                              path: path5,
                               isRadius: const BorderRadius.only(
                                   bottomLeft: Radius.circular(10)),
                             ),
@@ -116,8 +145,7 @@ class ExperienceView extends StatelessWidget {
                         ),
                         Row(
                           children: [
-                            _Image(
-                                size: size, path: 'assets/PC_Escritorio3.jpg'),
+                            _Image(size: size, path: path1),
                             Expanded(
                               child: Padding(
                                 padding: const EdgeInsets.all(15),
@@ -155,7 +183,7 @@ class ExperienceView extends StatelessWidget {
                                     )),
                               ),
                             ),
-                            _Image(size: size, path: 'assets/Hardware1.jpeg'),
+                            _Image(size: size, path: path2),
                           ],
                         ),
                         Padding(
@@ -169,8 +197,7 @@ class ExperienceView extends StatelessWidget {
                         ),
                         Row(
                           children: [
-                            _Image(
-                                size: size, path: 'assets/PC_Portatil10.jpg'),
+                            _Image(size: size, path: path3),
                             Expanded(
                               child: Padding(
                                 padding: const EdgeInsets.all(15),
@@ -208,7 +235,7 @@ class ExperienceView extends StatelessWidget {
                                     )),
                               ),
                             ),
-                            _Image(size: size, path: 'assets/PC_Portatil4.jpg'),
+                            _Image(size: size, path: path4),
                           ],
                         ),
                         Padding(
@@ -224,7 +251,7 @@ class ExperienceView extends StatelessWidget {
                           children: [
                             _Image(
                                 size: size,
-                                path: 'assets/PC_Portatil9.jpg',
+                                path: path5,
                                 isRadius: const BorderRadius.only(
                                     bottomLeft: Radius.circular(10))),
                             Expanded(
@@ -295,14 +322,25 @@ class _Image extends StatelessWidget {
   }) : super(key: key);
 
   final Size size;
-  final String path;
+  final List<String> path;
   final BorderRadius? isRadius;
   @override
   Widget build(BuildContext context) {
     return Expanded(
-      child: ClipRRect(
-        borderRadius: isRadius ?? BorderRadius.circular(0),
-        child: Image.asset(path),
+      child: SizedBox(
+        height: size.width * 0.43,
+        child: Swiper(
+          pagination: const SwiperPagination(),
+          duration: 1000,
+          autoplayDelay: Random().nextInt(2000) + 2000,
+          itemCount: path.length,
+          autoplay: true,
+          itemBuilder: (context, index) {
+            return ClipRRect(
+                borderRadius: isRadius ?? BorderRadius.circular(0),
+                child: Image.asset(path[index]));
+          },
+        ),
       ),
     );
   }
