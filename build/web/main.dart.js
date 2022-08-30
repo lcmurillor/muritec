@@ -37510,14 +37510,14 @@ A.D5.prototype={
 J(a,b){var s=null
 return A.bV(s,s,s,s,s,s,s,s)}}
 A.E2.prototype={
-J(a,b){var s,r,q,p,o,n=null,m="assets/experience/PC_Escritorio3.jpg",l="assets/experience/Hardware1.jpeg",k="assets/experience/PC_Portatil10.jpg",j="assets/experience/PC_Portatil4.jpg",i="assets/experience/PC_Portatil9.jpg",h=b.T(t.w).f.a,g=A.GE(b,!0,t.QU),f=h.a,e=h.b
+J(a,b){var s,r,q,p,o,n=null,m="assets/PC_Escritorio3.jpg",l="assets/Hardware1.jpeg",k="assets/PC_Portatil10.jpg",j="assets/PC_Portatil4.jpg",i="assets/PC_Portatil9.jpg",h=b.T(t.w).f.a,g=A.GE(b,!0,t.QU),f=h.a,e=h.b
 e=f>910?e-140:e-g.a
 s=A.j7(10)
 r=f>900?100:30
 q=t.p
 if(f>995)p=A.dD(A.a([A.db(A.a([new A.fm(h,m,B.wj,n),B.P0],q),B.t,B.bW,B.M),A.db(A.a([B.OZ,new A.fm(h,l,n,n)],q),B.t,B.bW,B.M),A.db(A.a([new A.fm(h,k,n,n),B.P2],q),B.t,B.bW,B.M),A.db(A.a([B.P_,new A.fm(h,j,n,n)],q),B.t,B.bW,B.M),A.db(A.a([new A.fm(h,i,B.l2,n),B.P1],q),B.t,B.bW,B.M)],q),B.t,B.F)
 else{p=f*0.04
-o=f*0.02
+o=f*0.024
 o=A.dD(A.a([new A.d9(B.ct,A.c8("Mantenimiento de Hardware",n,n,n,A.e2(B.j,p,B.R),B.br,n),n),A.db(A.a([new A.fm(h,m,n,n),A.jg(new A.d9(B.cr,A.c8(u.x,n,n,n,A.ie(B.j,o,B.C),n,n),n),1)],q),B.t,B.F,B.M),new A.d9(B.ct,A.c8("Venta de componentes",n,n,n,A.e2(B.j,p,B.R),B.br,n),n),A.db(A.a([A.jg(new A.d9(B.cr,A.c8(u.M,n,n,n,A.ie(B.j,o,B.C),n,n),n),1),new A.fm(h,l,n,n)],q),B.t,B.F,B.M),new A.d9(B.ct,A.c8("Mantenimiento de Software",n,n,n,A.e2(B.j,p,B.R),B.br,n),n),A.db(A.a([new A.fm(h,k,n,n),A.jg(new A.d9(B.cr,A.c8(u.F,n,n,n,A.ie(B.j,o,B.C),n,n),n),1)],q),B.t,B.F,B.M),new A.d9(B.ct,A.c8("Cambio de Pasta T\xe9rmica",n,n,n,A.e2(B.j,p,B.R),B.br,n),n),A.db(A.a([A.jg(new A.d9(B.cr,A.c8(u.k,n,n,n,A.ie(B.j,o,B.C),n,n),n),1),new A.fm(h,j,n,n)],q),B.t,B.F,B.M),new A.d9(B.ct,A.c8("Actualizaci\xf3n de Hardware",n,n,n,A.e2(B.j,p,B.R),B.br,n),n),A.db(A.a([new A.fm(h,i,B.l2,n),A.jg(new A.d9(B.cr,A.c8(u.g,n,n,n,A.ie(B.j,o,B.C),n,n),n),1)],q),B.t,B.F,B.M)],q),B.t,B.F)
 p=o}return A.eK(A.aiz(A.dD(A.a([A.bV(n,p,n,new A.ee(B.lX,n,n,s,n,n,B.al),n,new A.aN(r,50,r,50),n,n),B.eX],q),B.t,B.F),n),e,f)}}
 A.lG.prototype={

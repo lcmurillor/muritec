@@ -34,7 +34,7 @@ class ExperienceView extends StatelessWidget {
                           children: [
                             _Image(
                               size: size,
-                              path: 'assets/experience/PC_Escritorio3.jpg',
+                              path: 'assets/PC_Escritorio3.jpg',
                               isRadius: const BorderRadius.only(
                                   topLeft: Radius.circular(10)),
                             ),
@@ -55,7 +55,7 @@ class ExperienceView extends StatelessWidget {
                             ),
                             _Image(
                               size: size,
-                              path: 'assets/experience/Hardware1.jpeg',
+                              path: 'assets/Hardware1.jpeg',
                             ),
                           ],
                         ),
@@ -63,8 +63,7 @@ class ExperienceView extends StatelessWidget {
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             _Image(
-                                size: size,
-                                path: 'assets/experience/PC_Portatil10.jpg'),
+                                size: size, path: 'assets/PC_Portatil10.jpg'),
                             const _Description(
                               title: 'Mantenimiento de Software',
                               text:
@@ -82,7 +81,7 @@ class ExperienceView extends StatelessWidget {
                             ),
                             _Image(
                               size: size,
-                              path: 'assets/experience/PC_Portatil4.jpg',
+                              path: 'assets/PC_Portatil4.jpg',
                             ),
                           ],
                         ),
@@ -91,7 +90,7 @@ class ExperienceView extends StatelessWidget {
                           children: [
                             _Image(
                               size: size,
-                              path: 'assets/experience/PC_Portatil9.jpg',
+                              path: 'assets/PC_Portatil9.jpg',
                               isRadius: const BorderRadius.only(
                                   bottomLeft: Radius.circular(10)),
                             ),
@@ -118,8 +117,7 @@ class ExperienceView extends StatelessWidget {
                         Row(
                           children: [
                             _Image(
-                                size: size,
-                                path: 'assets/experience/PC_Escritorio3.jpg'),
+                                size: size, path: 'assets/PC_Escritorio3.jpg'),
                             Expanded(
                               child: Padding(
                                 padding: const EdgeInsets.all(15),
@@ -128,7 +126,7 @@ class ExperienceView extends StatelessWidget {
                                     style: GoogleFonts.lato(
                                       fontWeight: FontWeight.w500,
                                       color: Colors.white,
-                                      fontSize: size.width * 0.02,
+                                      fontSize: size.width * 0.024,
                                     )),
                               ),
                             ),
@@ -153,13 +151,11 @@ class ExperienceView extends StatelessWidget {
                                     style: GoogleFonts.lato(
                                       fontWeight: FontWeight.w500,
                                       color: Colors.white,
-                                      fontSize: size.width * 0.02,
+                                      fontSize: size.width * 0.024,
                                     )),
                               ),
                             ),
-                            _Image(
-                                size: size,
-                                path: 'assets/experience/Hardware1.jpeg'),
+                            _Image(size: size, path: 'assets/Hardware1.jpeg'),
                           ],
                         ),
                         Padding(
@@ -174,8 +170,7 @@ class ExperienceView extends StatelessWidget {
                         Row(
                           children: [
                             _Image(
-                                size: size,
-                                path: 'assets/experience/PC_Portatil10.jpg'),
+                                size: size, path: 'assets/PC_Portatil10.jpg'),
                             Expanded(
                               child: Padding(
                                 padding: const EdgeInsets.all(15),
@@ -184,7 +179,7 @@ class ExperienceView extends StatelessWidget {
                                     style: GoogleFonts.lato(
                                       fontWeight: FontWeight.w500,
                                       color: Colors.white,
-                                      fontSize: size.width * 0.02,
+                                      fontSize: size.width * 0.024,
                                     )),
                               ),
                             ),
@@ -209,13 +204,11 @@ class ExperienceView extends StatelessWidget {
                                     style: GoogleFonts.lato(
                                       fontWeight: FontWeight.w500,
                                       color: Colors.white,
-                                      fontSize: size.width * 0.02,
+                                      fontSize: size.width * 0.024,
                                     )),
                               ),
                             ),
-                            _Image(
-                                size: size,
-                                path: 'assets/experience/PC_Portatil4.jpg'),
+                            _Image(size: size, path: 'assets/PC_Portatil4.jpg'),
                           ],
                         ),
                         Padding(
@@ -231,7 +224,7 @@ class ExperienceView extends StatelessWidget {
                           children: [
                             _Image(
                                 size: size,
-                                path: 'assets/experience/PC_Portatil9.jpg',
+                                path: 'assets/PC_Portatil9.jpg',
                                 isRadius: const BorderRadius.only(
                                     bottomLeft: Radius.circular(10))),
                             Expanded(
@@ -242,7 +235,7 @@ class ExperienceView extends StatelessWidget {
                                     style: GoogleFonts.lato(
                                       fontWeight: FontWeight.w500,
                                       color: Colors.white,
-                                      fontSize: size.width * 0.02,
+                                      fontSize: size.width * 0.024,
                                     )),
                               ),
                             ),
