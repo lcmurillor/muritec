@@ -1,7 +1,9 @@
+import 'package:app_muritec/providers/email_provider.dart';
 import 'package:app_muritec/providers/menu_provider.dart';
 import 'package:app_muritec/providers/scroll_provider.dart';
 import 'package:app_muritec/router/router.dart';
 import 'package:app_muritec/services/navigation_service.dart';
+import 'package:app_muritec/services/notifications_service.dart';
 import 'package:app_muritec/theme/theme.dart';
 import 'package:flutter/material.dart';
 
@@ -15,7 +17,8 @@ class AppState extends StatelessWidget {
     return MultiProvider(
       providers: [
         ChangeNotifierProvider(create: (_) => MenuProvider()),
-        ChangeNotifierProvider(create: (_) => ScrollProvider())
+        ChangeNotifierProvider(create: (_) => ScrollProvider()),
+        ChangeNotifierProvider(create: (_) => EmailFormProvider())
       ],
       child: const MyApp(),
     );
@@ -44,6 +47,7 @@ class _MyAppState extends State<MyApp> {
       initialRoute: '/',
       onGenerateRoute: Flurorouter.router.generator,
       navigatorKey: NavigationService.navigatorKey,
+      scaffoldMessengerKey: NotificationsService.messengerKey,
       theme: MainTheme.lightTheme,
     );
   }

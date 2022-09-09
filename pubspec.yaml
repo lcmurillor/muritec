@@ -30,11 +30,13 @@ dependencies:
   animate_do: ^2.1.0
   card_swiper: ^2.0.4
   cupertino_icons: ^1.0.2
+  email_validator: ^2.1.17
   fluro: ^2.0.3
   flutter:
     sdk: flutter
   flutter_svg: ^1.1.4
   google_fonts: ^3.0.1
+  http: ^0.13.5
   material_design_icons_flutter: ^5.0.6996
   provider: ^6.0.3
   simple_gradient_text: ^1.2.3
