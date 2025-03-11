@@ -47,22 +47,22 @@ class _FullSizedFooter extends StatelessWidget {
           ),
           const Spacer(),
           //Botones dle menu
-          const CustomSocialMediaButton(
+          CustomSocialMediaButton(
             icon: MdiIcons.instagram,
             url: 'https://www.instagram.com/muri.tec/?hl=es',
             marginLeft: 40,
           ),
-          const CustomSocialMediaButton(
+          CustomSocialMediaButton(
             icon: MdiIcons.linkedin,
             url: 'https://www.linkedin.com/in/lcmurillor/',
             marginLeft: 40,
           ),
-          const CustomSocialMediaButton(
+           CustomSocialMediaButton(
             icon: MdiIcons.github,
             url: 'https://github.com/lcmurillor',
             marginLeft: 40,
           ),
-          const CustomSocialMediaButton(
+           CustomSocialMediaButton(
             icon: MdiIcons.facebook,
             url: 'https://www.facebook.com/muritec',
             marginLeft: 40,
@@ -97,7 +97,7 @@ class _MediumSizedFooter extends StatelessWidget {
             height: 80,
           ),
           Column(mainAxisAlignment: MainAxisAlignment.center, children: [
-            Row(children: const [
+            Row(children:  [
               CustomSocialMediaButton(
                 icon: MdiIcons.instagram,
                 url: 'https://www.instagram.com/lcmurillor/?hl=es',
@@ -111,7 +111,7 @@ class _MediumSizedFooter extends StatelessWidget {
                 iconSize: 25,
               )
             ]),
-            Row(children: const [
+            Row(children:  [
               CustomSocialMediaButton(
                 icon: MdiIcons.github,
                 url: 'https://github.com/lcmurillor',
