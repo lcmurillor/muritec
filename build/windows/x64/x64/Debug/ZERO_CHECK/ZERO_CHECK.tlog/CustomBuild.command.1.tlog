@@ -1,0 +1,10 @@
+^C:\PROJECTS\MURITEC\BUILD\WINDOWS\X64\CMAKEFILES\A99A4B0456251B7D4DC9F06140A0F267\GENERATE.STAMP.RULE
+setlocal
+"C:\Program Files (x86)\Microsoft Visual Studio\2019\BuildTools\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -SC:/projects/muritec/windows -BC:/projects/muritec/build/windows/x64 --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file C:/projects/muritec/build/windows/x64/app_muritec.sln
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

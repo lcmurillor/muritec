@@ -1,0 +1,10 @@
+^C:\PROJECTS\MURITEC\BUILD\WINDOWS\X64\CMAKEFILES\A99A4B0456251B7D4DC9F06140A0F267\INSTALL_FORCE.RULE
+setlocal
+cd .
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="16.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CustomBuild Include="C:\projects\muritec\build\windows\x64\CMakeFiles\bb2a1a099be9f86830e7ead057a64b81\INSTALL_force.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{A9FBE243-974E-3B25-AE97-B0CC38A507E7}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

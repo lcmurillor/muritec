@@ -6,7 +6,7 @@ class NotificationsService {
 
   static showSnackbarError(String message) {
     final snackBar = SnackBar(
-        backgroundColor: Colors.red.withOpacity(0.9),
+        backgroundColor: Colors.red.withValues(alpha: 0.8),
         content: Text(message,
             style: const TextStyle(color: Colors.white, fontSize: 20)));
 

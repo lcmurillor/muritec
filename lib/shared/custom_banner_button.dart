@@ -2,6 +2,9 @@ import 'package:app_muritec/theme/theme.dart';
 import 'package:flutter/Material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+import 'package:app_muritec/router/router.dart';
+import 'package:app_muritec/services/navigation_service.dart';
+
 class CustomBannerButton extends StatelessWidget {
   const CustomBannerButton(
       {Key? key, required this.height, required this.width})
@@ -14,9 +17,11 @@ class CustomBannerButton extends StatelessWidget {
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
     return TextButton(
-      onPressed: () {},
+      onPressed: () {
+         NavigationService.replaceTo(Flurorouter.contactusRoute);
+      },
       style: ButtonStyle(
-        overlayColor: MaterialStateProperty.all<Color>(Colors.transparent),
+        overlayColor: WidgetStateProperty.all<Color>(Colors.transparent),
       ),
       /**
        * Este contenedor construye la caja del boton con todos los estilos y colores.

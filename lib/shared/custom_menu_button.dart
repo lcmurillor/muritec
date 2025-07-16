@@ -42,10 +42,10 @@ class _CustomMenuButtonState extends State<CustomMenuButton> {
               bottom: widget.marginVertical ?? 0),
           child: TextButton(
               style: ButtonStyle(
-                padding: MaterialStateProperty.all<EdgeInsetsGeometry>(
+                padding: WidgetStateProperty.all<EdgeInsetsGeometry>(
                     const EdgeInsets.all(0)),
                 overlayColor:
-                    MaterialStateProperty.all<Color>(Colors.transparent),
+                    WidgetStateProperty.all<Color>(Colors.transparent),
               ),
               onPressed: () => widget.onPressed(),
               child: Text(

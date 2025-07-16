@@ -1,14 +1,9 @@
-import 'dart:convert';
 
-import 'package:app_muritec/providers/email_provider.dart';
 import 'package:app_muritec/providers/menu_provider.dart';
-import 'package:app_muritec/services/notifications_service.dart';
 import 'package:app_muritec/shared/sheards.dart';
 import 'package:app_muritec/theme/theme.dart';
-import 'package:email_validator/email_validator.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:http/http.dart' as http;
 
 class ContactUsView extends StatefulWidget {
   const ContactUsView({Key? key}) : super(key: key);
@@ -48,7 +43,7 @@ class _ContactUsViewState extends State<ContactUsView> {
                 width: width,
                 decoration: BoxDecoration(
                   gradient: LinearGradient(colors: [
-                    MainTheme.darkBlue.withOpacity(0.5),
+                    MainTheme.darkBlue.withValues(alpha: 0.8),
                     Colors.transparent
                   ], stops: const [
                     0.5,
@@ -94,7 +89,7 @@ class _ContactUsViewState extends State<ContactUsView> {
                         ? MainTheme.mainPadding
                         : const EdgeInsets.symmetric(horizontal: 40),
                     child: Container(
-                      padding: const EdgeInsets.symmetric(horizontal: 50),
+                      padding: const EdgeInsets.symmetric(horizontal: 50, vertical: 50),
                       decoration: BoxDecoration(
                           color: Colors.white,
                           borderRadius: BorderRadius.circular(10),
@@ -104,7 +99,7 @@ class _ContactUsViewState extends State<ContactUsView> {
                                 offset: const Offset(0, 8),
                                 blurRadius: 34)
                           ]),
-                      child: const _EmailForm(),
+                      child:  _InfoCard(),
                     ),
                   ),
                 ),
@@ -126,101 +121,66 @@ class _ContactUsViewState extends State<ContactUsView> {
   }
 }
 
-class _EmailForm extends StatelessWidget {
-  const _EmailForm({
-    Key? key,
-  }) : super(key: key);
 
+class _InfoCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    final width = MediaQuery.of(context).size.width;
-    final emailFormProvider = Provider.of<EmailFormProvider>(context);
-    return Form(
-      key: emailFormProvider.formKey,
-      child: Center(
+    return Center(
+      child: Container(
+        padding: EdgeInsets.all(16),
+        margin: EdgeInsets.all(16),
+        decoration: BoxDecoration(
+          color: Colors.blueGrey[50],
+          borderRadius: BorderRadius.circular(12),
+          boxShadow: [
+            BoxShadow(
+              color: Colors.grey.withOpacity(0.3),
+              blurRadius: 8,
+              offset: Offset(0, 4),
+            ),
+          ],
+        ),
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.start,
+          mainAxisSize: MainAxisSize.min,
           children: [
-            Text('Dirección de correo electronico',
-                softWrap: true,
-                maxLines: 4,
-                style: GoogleFonts.lato(
-                    fontWeight: FontWeight.w600,
-                    fontSize: (width > 740) ? 20 : 15)),
-            TextFormField(
-              decoration: const InputDecoration(
-                  hintText: 'Indique su dirección de correo electronico',
-                  border: OutlineInputBorder()),
-              onChanged: (value) => emailFormProvider.email = value,
-              keyboardType: TextInputType.emailAddress,
-              validator: (value) {
-                if (!EmailValidator.validate(value ?? '')) {
-                  return 'El correo no es válido.';
-                } else {
-                  value = null;
-                  return null;
-                }
-              },
+            Text(
+              'Luis Carlos Murillo Rosales',
+              style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
             ),
-            const SizedBox(height: 20),
-            Text('Mensaje',
-                softWrap: true,
-                maxLines: 4,
-                style: GoogleFonts.lato(
-                    fontWeight: FontWeight.w600,
-                    fontSize: (width > 740) ? 20 : 15)),
-            TextFormField(
-              decoration: const InputDecoration(
-                  hintText: '¿En qué le podemos ayudar?',
-                  border: OutlineInputBorder()),
-              onChanged: (value) => emailFormProvider.text = value,
-              validator: (value) {
-                if (value == null || value.isEmpty) {
-                  return 'Por favor, indique cual es su consulta.';
-                } else {
-                  value = null;
-                  return null;
-                }
-              },
-              maxLines: 5,
+            SizedBox(height: 8),
+            Text(
+              'Information Technology Engineer',
+              style: TextStyle(fontSize: 16, color: Colors.grey[700]),
             ),
-            Center(
-              child: TextButton(
-                onPressed: () {
-                  if (emailFormProvider.validateForm()) {
-                    sendEmail(
-                        email: emailFormProvider.email,
-                        text: emailFormProvider.text);
-                  }
-                },
-                style: ButtonStyle(
-                  overlayColor:
-                      MaterialStateProperty.all<Color>(Colors.transparent),
-                ),
-                child: Container(
-                  margin: const EdgeInsets.symmetric(vertical: 20),
-                  height: 50,
-                  width: 200,
-                  /**
-               * Efecto de degradado del contenedor
-               */
-                  decoration: MainTheme.buttonDecoration,
-                  alignment: Alignment.center,
-                  padding: const EdgeInsets.symmetric(horizontal: 20),
-                  /**
-               * Ajuste del tecxto la tamaño del contenedor
-               */
-                  child: FittedBox(
-                    fit: BoxFit.contain,
-                    child: Text('Enviar',
-                        softWrap: true,
-                        style: GoogleFonts.poppins(
-                            color: Colors.white, fontSize: 22)),
+            SizedBox(height: 16),
+            Row(
+              children: [
+                Icon(Icons.phone, color: Colors.blue),
+                SizedBox(width: 8),
+                Text('+506 8357-4730'),
+              ],
+            ),
+            SizedBox(height: 8),
+            Row(
+              children: [
+                Icon(Icons.email, color: Colors.red),
+                SizedBox(width: 8),
+                Text('lcmurillor@hotmail.com'),
+              ],
+            ),
+            SizedBox(height: 8),
+            Row(
+              children: [
+                Icon(Icons.link, color: Colors.blueAccent),
+                SizedBox(width: 8),
+                Expanded(
+                  child: Text(
+                    'linkedin.com/in/lcmurillor',
+                    overflow: TextOverflow.ellipsis,
                   ),
                 ),
-              ),
-            )
+              ],
+            ),
           ],
         ),
       ),
@@ -228,20 +188,124 @@ class _EmailForm extends StatelessWidget {
   }
 }
 
-Future sendEmail({
-  required String email,
-  required String text,
-}) async {
-  final url = Uri.parse('https://api.emailjs.com/api/v1.0/email/send');
-  await http
-      .post(url,
-          headers: {'Content-type': 'application/json'},
-          body: json.encode({
-            'service_id': 'service_2n1s485',
-            'template_id': 'template_myys59r',
-            'user_id': 'p3ZyjYXQdjOdtMHej',
-            'template_params': {'message': text, 'email': email}
-          }))
-      .then((value) => NotificationsService.showSnackbar(
-          'Su mensaje ha sido enviado exitosamente. Intentaremos responderle en la mayor brevedad posible. Muchas gracias.'));
-}
+
+///***CÓDIGO OBSOLETO DE VERISONES ANTERIORES */
+// class _EmailForm extends StatelessWidget {
+//   const _EmailForm({
+//     Key? key,
+//   }) : super(key: key);
+
+//   @override
+//   Widget build(BuildContext context) {
+//     final width = MediaQuery.of(context).size.width;
+//     final emailFormProvider = Provider.of<EmailFormProvider>(context);
+//     return Form(
+//       key: emailFormProvider.formKey,
+//       child: Center(
+//         child: Column(
+//           mainAxisAlignment: MainAxisAlignment.center,
+//           crossAxisAlignment: CrossAxisAlignment.start,
+//           children: [
+//             Text('Dirección de correo electronico',
+//                 softWrap: true,
+//                 maxLines: 4,
+//                 style: GoogleFonts.lato(
+//                     fontWeight: FontWeight.w600,
+//                     fontSize: (width > 740) ? 20 : 15)),
+//             TextFormField(
+//               decoration: const InputDecoration(
+//                   hintText: 'Indique su dirección de correo electronico',
+//                   border: OutlineInputBorder()),
+//               onChanged: (value) => emailFormProvider.email = value,
+//               keyboardType: TextInputType.emailAddress,
+//               validator: (value) {
+//                 if (!EmailValidator.validate(value ?? '')) {
+//                   return 'El correo no es válido.';
+//                 } else {
+//                   value = null;
+//                   return null;
+//                 }
+//               },
+//             ),
+//             const SizedBox(height: 20),
+//             Text('Mensaje',
+//                 softWrap: true,
+//                 maxLines: 4,
+//                 style: GoogleFonts.lato(
+//                     fontWeight: FontWeight.w600,
+//                     fontSize: (width > 740) ? 20 : 15)),
+//             TextFormField(
+//               decoration: const InputDecoration(
+//                   hintText: '¿En qué le podemos ayudar?',
+//                   border: OutlineInputBorder()),
+//               onChanged: (value) => emailFormProvider.text = value,
+//               validator: (value) {
+//                 if (value == null || value.isEmpty) {
+//                   return 'Por favor, indique cual es su consulta.';
+//                 } else {
+//                   value = null;
+//                   return null;
+//                 }
+//               },
+//               maxLines: 5,
+//             ),
+//             Center(
+//               child: TextButton(
+//                 onPressed: () {
+//                   if (emailFormProvider.validateForm()) {
+//                     sendEmail(
+//                         email: emailFormProvider.email,
+//                         text: emailFormProvider.text);
+//                   }
+//                 },
+//                 style: ButtonStyle(
+//                   overlayColor:
+//                       WidgetStateProperty.all<Color>(Colors.transparent),
+//                 ),
+//                 child: Container(
+//                   margin: const EdgeInsets.symmetric(vertical: 20),
+//                   height: 50,
+//                   width: 200,
+//                   /**
+//                * Efecto de degradado del contenedor
+//                */
+//                   decoration: MainTheme.buttonDecoration,
+//                   alignment: Alignment.center,
+//                   padding: const EdgeInsets.symmetric(horizontal: 20),
+//                   /**
+//                * Ajuste del tecxto la tamaño del contenedor
+//                */
+//                   child: FittedBox(
+//                     fit: BoxFit.contain,
+//                     child: Text('Enviar',
+//                         softWrap: true,
+//                         style: GoogleFonts.poppins(
+//                             color: Colors.white, fontSize: 22)),
+//                   ),
+//                 ),
+//               ),
+//             )
+//           ],
+//         ),
+//       ),
+//     );
+//   }
+// }
+
+// FutureOr sendEmail({
+//   required String email,
+//   required String text,
+// }) async {
+//   final url = Uri.parse('https://api.emailjs.com/api/v1.0/email/send');
+//   await http
+//       .post(url,
+//           headers: {'Content-type': 'application/json'},
+//           body: json.encode({
+//             'service_id': 'service_2n1s485',
+//             'template_id': 'template_myys59r',
+//             'user_id': 'p3ZyjYXQdjOdtMHej',
+//             'template_params': {'message': text, 'email': email}
+//           }))
+//       .then((value) => NotificationsService.showSnackbar(
+//           'Su mensaje ha sido enviado exitosamente. Intentaremos responderle en la mayor brevedad posible. Muchas gracias.'));
+// }

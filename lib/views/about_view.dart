@@ -42,7 +42,7 @@ class _AboutViewState extends State<AboutView> {
               width: width,
               decoration: BoxDecoration(
                 gradient: LinearGradient(colors: [
-                  MainTheme.darkBlue.withOpacity(0.5),
+                  MainTheme.darkBlue.withValues(alpha: 0.8),
                   Colors.transparent
                 ], stops: const [
                   0.1,
@@ -153,10 +153,10 @@ class _FullSizedBanner extends StatelessWidget {
             width: width, widthTextValue: 0.6, widthTitleValue: 0.05),
 
         ///LLamado al botón lateral que redirije a la pagina de contáctanos.
-        const CustomBannerButton(
-          height: 0.10,
-          width: 0.20,
-        )
+          const CustomBannerButton(
+            height: 0.10,
+            width: 0.20,
+          )
       ]),
     );
   }

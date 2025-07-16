@@ -29,7 +29,7 @@ class _ServicesTopCardState extends State<ServicesTopCard> {
     double width = MediaQuery.of(context).size.width;
     return Container(
       margin: EdgeInsets.symmetric(vertical: 70, horizontal: width * 0.03),
-      width: 320,
+      width: 350,
       decoration: BoxDecoration(
           color: Colors.white,
           borderRadius: BorderRadius.circular(10),
@@ -85,7 +85,7 @@ class _ServicesTopCardState extends State<ServicesTopCard> {
             });
           },
           style: ButtonStyle(
-            overlayColor: MaterialStateProperty.all<Color>(Colors.transparent),
+            overlayColor: WidgetStateProperty.all<Color>(Colors.transparent),
           ),
           child: Container(
             margin: const EdgeInsets.symmetric(vertical: 20),
@@ -98,7 +98,7 @@ class _ServicesTopCardState extends State<ServicesTopCard> {
             alignment: Alignment.center,
             padding: const EdgeInsets.symmetric(horizontal: 20),
             /**
-           * Ajuste del tecxto la tamaño del contenedor
+           * Ajuste del texto la tamaño del contenedor
            */
             child: FittedBox(
               fit: BoxFit.contain,
