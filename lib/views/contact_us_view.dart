@@ -1,8 +1,8 @@
-
 import 'package:app_muritec/providers/menu_provider.dart';
 import 'package:app_muritec/shared/sheards.dart';
 import 'package:app_muritec/theme/theme.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class ContactUsView extends StatefulWidget {
@@ -82,14 +82,15 @@ class _ContactUsViewState extends State<ContactUsView> {
                 Container(
                   color: Colors.white,
                   width: double.infinity,
-                  height: 500,
+                  height: 300,
                   padding: const EdgeInsets.symmetric(vertical: 50),
                   child: Padding(
                     padding: (width > 650)
                         ? MainTheme.mainPadding
                         : const EdgeInsets.symmetric(horizontal: 40),
                     child: Container(
-                      padding: const EdgeInsets.symmetric(horizontal: 50, vertical: 50),
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 50, vertical: 20),
                       decoration: BoxDecoration(
                           color: Colors.white,
                           borderRadius: BorderRadius.circular(10),
@@ -99,7 +100,7 @@ class _ContactUsViewState extends State<ContactUsView> {
                                 offset: const Offset(0, 8),
                                 blurRadius: 34)
                           ]),
-                      child:  _InfoCard(),
+                      child: _InfoCard(),
                     ),
                   ),
                 ),
@@ -121,73 +122,37 @@ class _ContactUsViewState extends State<ContactUsView> {
   }
 }
 
-
 class _InfoCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: Container(
-        padding: EdgeInsets.all(16),
-        margin: EdgeInsets.all(16),
-        decoration: BoxDecoration(
-          color: Colors.blueGrey[50],
-          borderRadius: BorderRadius.circular(12),
-          boxShadow: [
-            BoxShadow(
-              color: Colors.grey.withOpacity(0.3),
-              blurRadius: 8,
-              offset: Offset(0, 4),
-            ),
-          ],
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.center,
+      crossAxisAlignment: CrossAxisAlignment.center,
+      children: [
+        Container(
+            //Logo de la empresa
+            padding: const EdgeInsets.only(bottom: 20),
+            child: SvgPicture.asset(
+              'assets/Isologotipo.svg',
+              semanticsLabel: 'MuriTEC logo',
+              fit: BoxFit.cover,
+              height: 100,
+            )),
+        SizedBox(
+          width: 100,
         ),
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
+        Column(
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text(
-              'Luis Carlos Murillo Rosales',
-              style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-            ),
-            SizedBox(height: 8),
-            Text(
-              'Information Technology Engineer',
-              style: TextStyle(fontSize: 16, color: Colors.grey[700]),
-            ),
-            SizedBox(height: 16),
-            Row(
-              children: [
-                Icon(Icons.phone, color: Colors.blue),
-                SizedBox(width: 8),
-                Text('+506 8357-4730'),
-              ],
-            ),
-            SizedBox(height: 8),
-            Row(
-              children: [
-                Icon(Icons.email, color: Colors.red),
-                SizedBox(width: 8),
-                Text('lcmurillor@hotmail.com'),
-              ],
-            ),
-            SizedBox(height: 8),
-            Row(
-              children: [
-                Icon(Icons.link, color: Colors.blueAccent),
-                SizedBox(width: 8),
-                Expanded(
-                  child: Text(
-                    'linkedin.com/in/lcmurillor',
-                    overflow: TextOverflow.ellipsis,
-                  ),
-                ),
-              ],
-            ),
+            Row(children: [
+              Text('sdsdsad')
+            ])
           ],
-        ),
-      ),
+        )
+      ],
     );
   }
 }
-
 
 ///***CÓDIGO OBSOLETO DE VERISONES ANTERIORES */
 // class _EmailForm extends StatelessWidget {
