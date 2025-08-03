@@ -54,7 +54,7 @@ class _FullSizedFooter extends StatelessWidget {
           ),
           CustomSocialMediaButton(
             icon: MdiIcons.linkedin,
-            url: 'https://www.linkedin.com/in/lcmurillor/',
+            url: 'https://www.linkedin.com/in/lcmurillor',
             marginLeft: 40,
           ),
            CustomSocialMediaButton(
@@ -100,13 +100,13 @@ class _MediumSizedFooter extends StatelessWidget {
             Row(children:  [
               CustomSocialMediaButton(
                 icon: MdiIcons.instagram,
-                url: 'https://www.instagram.com/lcmurillor/?hl=es',
+                url: 'https://www.instagram.com/lcmurillor/',
                 marginLeft: 0,
                 iconSize: 25,
               ),
               CustomSocialMediaButton(
                 icon: MdiIcons.linkedin,
-                url: 'https://www.linkedin.com/in/lcmurillor/',
+                url: 'https://www.linkedin.com/in/lcmurillor',
                 marginLeft: 10,
                 iconSize: 25,
               )
@@ -120,7 +120,7 @@ class _MediumSizedFooter extends StatelessWidget {
               ),
               CustomSocialMediaButton(
                 icon: MdiIcons.facebook,
-                url: 'https://www.facebook.com/profile.php?id=100072001248682',
+                url: 'https://www.facebook.com/lcmurillor',
                 marginLeft: 10,
                 iconSize: 25,
               ),

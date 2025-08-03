@@ -4,6 +4,7 @@ import 'package:app_muritec/theme/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:url_launcher/url_launcher_string.dart';
 
 class ContactUsView extends StatefulWidget {
   const ContactUsView({Key? key}) : super(key: key);
@@ -82,7 +83,7 @@ class _ContactUsViewState extends State<ContactUsView> {
                 Container(
                   color: Colors.white,
                   width: double.infinity,
-                  height: 300,
+                  height: 350,
                   padding: const EdgeInsets.symmetric(vertical: 50),
                   child: Padding(
                     padding: (width > 650)
@@ -100,7 +101,7 @@ class _ContactUsViewState extends State<ContactUsView> {
                                 offset: const Offset(0, 8),
                                 blurRadius: 34)
                           ]),
-                      child: _InfoCard(),
+                      child:  (width > 650) ? _InfoCard() :_InfoCardVertical(),
                     ),
                   ),
                 ),
@@ -129,27 +130,143 @@ class _InfoCard extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.center,
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
-        Container(
-            //Logo de la empresa
-            padding: const EdgeInsets.only(bottom: 20),
-            child: SvgPicture.asset(
-              'assets/Isologotipo.svg',
-              semanticsLabel: 'MuriTEC logo',
-              fit: BoxFit.cover,
-              height: 100,
-            )),
-        SizedBox(
-          width: 100,
+        SvgPicture.asset(
+          'assets/Isologotipo.svg',
+          semanticsLabel: 'MuriTEC logo',
+          fit: BoxFit.cover,
+          height: 150,
+        ),
+        const SizedBox(
+          width: 50,
         ),
         Column(
           mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Row(children: [
-              Text('sdsdsad')
-            ])
+              Text('Luis Carlos Murillo Rosales',
+                  style: GoogleFonts.poppins(
+                      fontWeight: FontWeight.w500,
+                      fontSize: 20,
+                      color: MainTheme.mainGray))
+            ]),
+            Row(children: [
+              Text('Ingeniero en Tencnologías de Información',
+                  style: GoogleFonts.poppins(
+                      fontWeight: FontWeight.w500,
+                      fontSize: 12,
+                      color: MainTheme.mainGray))
+            ]),
+            _Hyperlink(
+              imgPath: 'assets/phone.svg',
+              text: '+506 8890-0888',
+              url: 'https://wa.me/50688900888',
+            ),
+            _Hyperlink(
+              imgPath: 'assets/mail.svg',
+              text: 'lcmurillor@hotmail.com',
+              url: 'mailto:lcmurillor@hotmail.com',
+            ),
+            _Hyperlink(
+              imgPath: 'assets/linkedin.svg',
+              text: 'linkedin.com/in/lcmurillor',
+              url: 'https://www.linkedin.com/in/lcmurillor',
+            ),
+             _Hyperlink(
+              imgPath: 'assets/github.svg',
+              text: 'github.com/lcmurillor',
+              url: 'https://github.com/lcmurillor',
+            ),
           ],
         )
       ],
+    );
+  }
+}
+
+class _InfoCardVertical extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return 
+        Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Row(children: [
+              Text('Luis Carlos Murillo Rosales',
+                  style: GoogleFonts.poppins(
+                      fontWeight: FontWeight.w500,
+                      fontSize: 15,
+                      color: MainTheme.mainGray))
+            ]),
+            Row(children: [
+              Text('Ingeniero en Tencnologías de Información',
+                  style: GoogleFonts.poppins(
+                      fontWeight: FontWeight.w500,
+                      fontSize: 9,
+                      color: MainTheme.mainGray))
+            ]),
+            _Hyperlink(
+              imgPath: 'assets/phone.svg',
+              text: '+506 8890-0888',
+              url: 'https://wa.me/50688900888',
+              
+            ),
+            _Hyperlink(
+              imgPath: 'assets/mail.svg',
+              text: 'lcmurillor@hotmail.com',
+              url: 'mailto:lcmurillor@hotmail.com',
+              fontSize: 12,
+            ),
+            _Hyperlink(
+              imgPath: 'assets/linkedin.svg',
+              text: 'linkedin.com/in/lcmurillor',
+              url: 'https://www.linkedin.com/in/lcmurillor',
+              fontSize: 12,
+            ),
+             _Hyperlink(
+              imgPath: 'assets/github.svg',
+              text: 'github.com/lcmurillor',
+              url: 'https://github.com/lcmurillor',
+              fontSize: 12,
+            ),
+          ],
+        );
+  }
+}
+
+class _Hyperlink extends StatelessWidget {
+  final String imgPath;
+  final String text;
+  final double? fontSize;
+  final String url;
+
+
+  const _Hyperlink({Key? key, required this.imgPath,required this.text,  this.fontSize = 15, required this.url})
+      : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      padding: EdgeInsets.symmetric(vertical: 4),
+      child: Row(children: [
+        SvgPicture.asset(
+          imgPath,
+          semanticsLabel: imgPath,
+          fit: BoxFit.cover,
+          height: 18,
+        ),
+        const SizedBox(
+          width: 10,
+        ),
+        InkWell(
+            child: Text(text,
+                style: GoogleFonts.poppins(
+                    fontWeight: FontWeight.w500,
+                    fontSize: fontSize,
+                    color: MainTheme.mainGray)),
+            onTap: () => launchUrlString(url)),
+      ]),
     );
   }
 }

@@ -4,5 +4,5 @@ Esta página web es un proyecto de desarrollo en flutter para paner a prueba mis
 
 ## Consulta las redes sociales del creador.
 
-- [Linkedin](https://www.linkedin.com/in/lcmurillor/)
+- [Linkedin](https://www.linkedin.com/in/lcmurillor)
 
