@@ -1,11 +1,8 @@
 # MuriTEC
 
-Somos un equipo multidisciplinario enfocado en las distintas áreas de las Tecnologías de la información.
+Esta página web es un proyecto de desarrollo en flutter para paner a prueba mis habilidades en el lenguaje, práctica en el estipo y diseño y un intento de puesta en marcha de un emprendimiento.
 
-## Consulta nuestras otras redes sociales
+## Consulta las redes sociales del creador.
 
-- [Instagram](https://www.instagram.com/muri.tec/?hl=es)
 - [Linkedin](https://www.linkedin.com/in/lcmurillor/)
-- [GitHub](https://github.com/lcmurillor)
-- [Facebook](https://www.facebook.com/muritec)
 
